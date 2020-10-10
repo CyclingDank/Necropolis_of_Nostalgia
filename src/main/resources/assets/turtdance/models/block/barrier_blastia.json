@@ -1,0 +1,95 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+"ambientocclusion": false,
+    "textures": {
+        "kettle_face": "turtdance:blocks/kettle_face",
+        "bake_kettle_face": "turtdance:blocks/bake_kettle_face",
+        "kettle_misc": "turtdance:blocks/kettle_misc",
+		"particle": "turtdance:blocks/bake_kettle_face"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "kettle_base",
+            "from": [ 1, 0, 1 ], 
+            "to": [ 15, 12, 15 ], 
+            "faces": {
+                "north": { "texture": "#kettle_face", "uv": [ 1, 2, 15, 14 ] },
+                "east": { "texture": "#kettle_face", "uv": [ 1, 2, 15, 14 ] },
+                "south": { "texture": "#kettle_face", "uv": [ 1, 2, 15, 14 ] },
+                "west": { "texture": "#kettle_face", "uv": [ 1, 2, 15, 14 ] },
+                "up": { "texture": "#bake_kettle_face", "uv": [ 1, 1, 15, 15 ] }
+            }
+        },
+        {
+            "name": "kettle_lid_handle",
+            "from": [ 6, 12, 7 ], 
+            "to": [ 10, 14, 9 ], 
+            "faces": {
+                "north": { "texture": "#kettle_misc", "uv": [ 3, 10, 7, 12 ] },
+                "east": { "texture": "#kettle_misc", "uv": [ 2, 10, 4, 12 ] },
+                "south": { "texture": "#kettle_misc", "uv": [ 8, 10, 12, 12 ] },
+                "west": { "texture": "#kettle_misc", "uv": [ 7, 10, 9, 12 ] },
+                "up": { "texture": "#kettle_misc", "uv": [ 3, 9, 7, 11 ] }
+            }
+        },
+        {
+            "name": "kettle_left_handle",
+            "from": [ 0, 11, 6 ], 
+            "to": [ 1, 11, 10 ], 
+            "faces": {
+                "up": { "texture": "#kettle_misc", "uv": [ 3, 3, 4, 7 ] },
+                "down": { "texture": "#kettle_misc", "uv": [ 4, 3, 5, 7 ] }
+            }
+        },
+        {
+            "name": "kettle_left_handle",
+            "from": [ 15, 11, 6 ], 
+            "to": [ 16, 11, 10 ], 
+            "faces": {
+                "up": { "texture": "#kettle_misc", "uv": [ 3, 3, 4, 7 ] },
+                "down": { "texture": "#kettle_misc", "uv": [ 4, 3, 5, 7 ] }
+            }
+        },
+        {
+            "name": "kettle_bottom",
+            "from": [ 1, 2, 1 ], 
+            "to": [ 15, 2, 15 ], 
+            "faces": {
+                "up": { "texture": "#bake_kettle_face", "uv": [ 1, 1, 15, 15 ] },
+                "down": { "texture": "#bake_kettle_face", "uv": [ 1, 1, 15, 15 ] }
+            }
+        }
+    ]
+}
