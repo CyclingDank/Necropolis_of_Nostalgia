@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"level=0": { "model": "turtdance:kelp" },
+		"level=1": { "model": "turtdance:kelp_head" }
+	}
+}

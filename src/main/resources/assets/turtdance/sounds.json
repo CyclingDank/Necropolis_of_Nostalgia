@@ -1,0 +1,122 @@
+{
+	"guard_hit": {
+		"sounds": [ "turtdance:combat/guard_hit" ]
+	},
+	"demon_fang": {
+		"sounds": [ "turtdance:combat/demon_fang" ]
+	},
+	"casting_40_ticks": {
+		"sounds": [ "turtdance:combat/casting_40_ticks" ]
+	},
+	"casting_80_ticks": {
+		"sounds": [ "turtdance:combat/casting_80_ticks" ]
+	},
+	"arte_complete": {
+		"sounds": [ "turtdance:combat/arte_complete" ]
+	},
+	"heal": {
+		"sounds": [ "turtdance:combat/heal" ]
+	},
+	"recover": {
+		"sounds": [ "turtdance:combat/recover" ]
+	},
+	"light_cast": {
+		"sounds": [ "turtdance:combat/light_cast" ]
+	},
+	"damage": {
+		"sounds": [ "turtdance:combat/damage" ]
+	},
+	"health_increase": {
+		"sounds": [ "turtdance:general/health_increase" ]
+	},
+	"frying_1": {
+		"sounds": [ "turtdance:general/frying_1" ]
+	},
+	"frying_2": {
+		"sounds": [ "turtdance:general/frying_2" ]
+	},
+	"frying_3": {
+		"sounds": [ "turtdance:general/frying_3" ]
+	},
+	"frying_4": {
+		"sounds": [ "turtdance:general/frying_4" ]
+	},
+	"skeleton_detect": {
+		"sounds": [ "turtdance:enemies/skeleton_detect" ]
+	},
+	"skeleton_roar": {
+		"sounds": [ "turtdance:enemies/skeleton_roar" ]
+	},
+	"beast": {
+		"sounds": [ "turtdance:combat/beast" ]
+	},
+	"ab_cry": {
+		"sounds": [ "turtdance:enemies/ab_cry" ]
+	},
+	"ab_grunt": {
+		"sounds": [ "turtdance:enemies/ab_grunt" ]
+	},
+	"ab_angry": {
+		"sounds": [ "turtdance:enemies/ab_angry" ]
+	},
+	"bat_ambient": {
+		"sounds": [ "turtdance:enemies/bat_ambient" ]
+	},
+	"bat_cry": {
+		"sounds": [ "turtdance:enemies/bat_cry" ]
+	},
+	"booglin_ambient": {
+		"sounds": [ "turtdance:enemies/booglin_ambient" ]
+	},
+	"booglin_cry": {
+		"sounds": [ "turtdance:enemies/booglin_cry" ]
+	},
+	"booglin_drill_1": {
+		"sounds": [ "turtdance:enemies/booglin_drill_1" ]
+	},
+	"booglin_drill_2": {
+		"sounds": [ "turtdance:enemies/booglin_drill_2" ]
+	},
+	"spider_ambient": {
+		"sounds": [ "turtdance:enemies/spider_ambient" ]
+	},
+	"spider_cry": {
+		"sounds": [ "turtdance:enemies/spider_cry" ]
+	},
+	"baby_spider_grow": {
+		"sounds": [ "turtdance:enemies/baby_spider_grow" ]
+	},
+	"baby_spider_gone": {
+		"sounds": [ "turtdance:enemies/baby_spider_gone" ]
+	},
+	"fugu_ambient": {
+		"sounds": [ "turtdance:enemies/fugu_ambient" ]
+	},
+	"fugu_cry": {
+		"sounds": [ "turtdance:enemies/fugu_cry" ]
+	},
+	"pb_cast": {
+		"sounds": [ "turtdance:combat/pb_cast" ]
+	},
+	"pb_crack": {
+		"sounds": [ "turtdance:combat/pb_crack" ]
+	},
+	"pb_end": {
+		"sounds": [ "turtdance:combat/pb_end" ]
+	},
+	"of_cast": {
+		"sounds": [ "turtdance:combat/of_cast" ]
+	},
+	"nosferatu_cast": {
+		"sounds": [ "turtdance:combat/nosferatu_cast" ]
+	},
+	"nosferatu_end": {
+		"sounds": [ "turtdance:combat/nosferatu_end" ]
+	},
+	"tb_cast": {
+		"sounds": [ "turtdance:combat/tb_cast" ]
+	},
+	"eruption_cast": {
+		"sounds": [ "turtdance:combat/eruption_cast" ]
+	}
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "  C",
+    " C ",
+    "S  "
+  ],
+
+  "key":
+  {
+    "S":
+    {
+      "item": "minecraft:stick"
+    },
+    "C":
+    {
+      "item": "minecraft:cobblestone"
+    }
+  },
+
+  "result":
+  {
+    "item": "turtdance:stone_rapier",
+    "count": 1
+  }
+}

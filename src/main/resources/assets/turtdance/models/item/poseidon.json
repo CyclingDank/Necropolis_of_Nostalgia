@@ -1,0 +1,60 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "turtdance:items/poseidon"
+	},
+	"display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        -90,
+        55
+      ],
+      "translation": [
+        0,
+        7.0,
+        0
+      ],
+      "scale": [ 1.5, 1.5, 1.5 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        -55
+      ],
+      "translation": [
+        0,
+        7.0,
+        0
+      ],
+      "scale": [ 1.5, 1.5, 1.5 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        -20,
+        -90,
+        10
+      ],
+      "translation": [
+        1.13,
+        5.2,
+        -0.26
+      ],
+      "scale": [ 1.5, 1.5, 1.5 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -20,
+        -90,
+        -80
+      ],
+      "translation": [
+        1.13,
+        5.2,
+        -0.26
+      ],
+      "scale": [ 1.5, 1.5, 1.5 ]
+    }
+  }
+}

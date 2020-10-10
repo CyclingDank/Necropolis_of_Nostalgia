@@ -1,0 +1,13 @@
+[
+    {
+        "modid": "turtdance",
+        "name": "Necropolis of Nostalgia",
+        "description": "Necropolis of Nostalgia adds bosses and dungeons that further develop your Minecraft roleplaying experience.",
+        "version": "${version}",
+        "mcversion": "1.12.2",
+        "authorList": [
+            "Turtledove"
+        ],
+        "credits": ""
+    }
+]
