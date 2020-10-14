@@ -1,23 +1,14 @@
 package com.turtledove.necropolisofnostalgia.server.ai;
 
-import com.google.common.base.Predicates;
-import com.sun.javafx.geom.Vec2d;
-import com.turtledove.necropolisofnostalgia.Necropolis_of_Nostalgia;
 import com.turtledove.necropolisofnostalgia.server.entity.NecropolisEntity;
 import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityAxeBeak;
-import com.turtledove.necropolisofnostalgia.server.packets.Player.SyncPlayer;
 import com.turtledove.necropolisofnostalgia.server.sounds.NecropolisSounds;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EntitySelectors;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
 
@@ -75,7 +66,7 @@ public class AnimationABLeapAI <T extends NecropolisEntity & IAnimatedEntity> ex
             }
         }
 
-        List<Entity> swipeEnemies = this.entity.world.getEntitiesWithinAABBExcludingEntity(this.entity,  this.entity.getEntityBoundingBox());
+        List<Entity> swipeEnemies = this.entity.world.getEntitiesWithinAABBExcludingEntity(this.entity, this.entity.getEntityBoundingBox());
 
         if (this.entity.getAnimationTick() >= 20)
         {
