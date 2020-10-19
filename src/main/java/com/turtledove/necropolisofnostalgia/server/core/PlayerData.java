@@ -31,19 +31,17 @@ import java.util.ArrayList;
 
 public class PlayerData implements IPlayerData
 {
-    private float maxMana = 9999.0F;
-    private float minMana = 0.0F;
+    private final int ARTE_LENGTH = 9;
+    private final int QUEST_LENGTH = 256;
+    private final int BUFFER_LENGTH = 4;
 
     private boolean isOldFace;
 
     private int syncCount = 1200;  //syncs every minute, aka 1200 ticks
 
-    private float manaRegenTime;
-    private float regenTime;
 
     //DIALOGUE RELATED
     NecropolisQuestHandler questHandler = new NecropolisQuestHandler();
-
     private  int current_quest = -1;
     private int current_quest_status = -1;
     private int current_page = 0;
@@ -53,66 +51,56 @@ public class PlayerData implements IPlayerData
     private int merchantPoints;
 
     /*THESE MUST BE SET ACCORDING TO CLASS, ABILITIES, OR SKILLS*/
+    private float manaRegenTime;
+    private float regenTime;
     public float regenRate;
     protected float playermaxMana;
     protected float playerMana;
 
+    //class and weapon checks
     private int current_class;  //0 is knight, 1 is noblesse, 2 is scholar, 3 is general, 4 is halberdier, 5 is regal
     private int current_weapon; //-1 is N/A, 0 is a sword, 1 is a rapier, 2 is a tome, 3 is a halberd.
     private int prev_weapon;
 
+    //player stamina
     private int playerStamina;
     private boolean staminaPunish;
 
+    //player artes
     public int[] bindedArtes = new int[9]; //binding of player artes. 0 is first click, 1 is second, etc. The value is the index of the arte in ArteHandler.
-
     public int[] primaryArtes = new int[9];
     public int[] secondaryArtes = new int[9];
-
     public ArteHandler artes = new ArteHandler();
     public ClassHandler n_classes = new ClassHandler();
-
     public int[] arteCount = new int[artes.NUM_ARTES];
-
-    private int[] buff_cooldown = new int [4];
-
     protected int pArteCoolDown;    //The duration of the cast. If chainCount is 0, it does nothing.
     public int currentCol;  //Whether the selected arte is on left, middle, or right
     public int currentpArte;
     public float attackProgress;
     private boolean inBufferZone;
     public boolean activatepArte;
-
     private float current_artetime;
     private float prev_artetime;
 
+    //player stat buff cooldown
+    private int[] buff_cooldown = new int [4];
+
     private final EntityPlayer player;
-    private final EntityDataManager privateData;
-
-    private final static DataParameter<Float> MANA = EntityDataManager.createKey(EntityPlayer.class, DataSerializers.FLOAT);
-    private final static DataParameter<Float> REGEN = EntityDataManager.createKey(EntityPlayer.class, DataSerializers.FLOAT);
-    private final static DataParameter<Float> ACC = EntityDataManager.createKey(EntityPlayer.class, DataSerializers.FLOAT);
-
-
+    //private final EntityDataManager privateData;
 
     public PlayerData()
     {
         this.player = null;
-        this.manaRegenTime = 1.25F;
-        this.regenTime = 0;
-        this.privateData = null;
-        this.regenRate = 1.0F;
+
         this.pArteCoolDown = 0;
         this.currentpArte = 0;
         this.currentCol = 0;
         this.attackProgress = 1.0F;
         this.activatepArte = false;
         this.inBufferZone = true;
-        this.playermaxMana = 256;
-        this.playerMana = playermaxMana;
+
         this.current_artetime = 0.0F;
         this.prev_artetime = 0.0F;
-        this.set_class(-1);
         this.current_weapon = -1;
         this.prev_weapon = -1;
         this.playerStamina = 400;
@@ -121,97 +109,44 @@ public class PlayerData implements IPlayerData
 
         this.current_class = -1;
 
-        this.current_quest = -1;
-        this.current_quest_status = -1;
-        this.current_page = 0;
-        this.merchantPoints = 0;
 
-        for (int i = 0; i < 9; i++)
-        {
-            bindedArtes[i] = -1;
-            this.primaryArtes[i] = -1;
-            this.secondaryArtes[i] = -1;
-        }
+        this.set_class(-1);
 
-        for (int i = 0; i < 256; i++)
-        {
-            this.questStatus[i] = -1;
-        }
-
-        buff_cooldown[0] = 0;
-        buff_cooldown[1] = 0;
-        buff_cooldown[2] = 0;
-        buff_cooldown[3] = 0;
-
-        for (int i = 0; i < arteCount.length; i++)
-        {
-            arteCount[i] = 0;
-        }
+        this.initializeMerchantVar();
+        this.initializeManaVar();
+        this.initializeDialogueVar();
+        this.initializeArtes();
+        this.initializeBufferCooldowns();
+        this.initializeArteUsageCount();
     }
     public PlayerData(EntityPlayer player)
     {
         this.player = player;
-        this.manaRegenTime = 1.25F;
-        this.regenTime = 0;
-        this.regenRate = 0.0F;
+
         this.pArteCoolDown = 0;
         this.currentpArte = 0;
         this.currentCol = 0;
         this.attackProgress = 1.0F;
         this.activatepArte = false;
         this.inBufferZone = true;
-        this.playermaxMana = 256;
-        this.playerMana = playermaxMana;
-        this.set_class(-1);
+
         this.current_weapon = -1;
         this.prev_weapon = -1;
         this.playerStamina = 400;
         this.staminaPunish = false;
         this.isOldFace = false;
-        this.merchantPoints = 0;
 
+        this.set_class(-1);
 
-        bindedArtes[0] = ArteHandler.ARTES.FIRE_BALL.ordinal();
-        bindedArtes[1] = ArteHandler.ARTES.QUICK_SLASH.ordinal();
-        bindedArtes[2] = ArteHandler.ARTES.QUICK_SLASH.ordinal();
-        bindedArtes[3] = ArteHandler.ARTES.QUICK_SLASH.ordinal();
-        bindedArtes[4] = ArteHandler.ARTES.SCATTERING_SLASH.ordinal();
-        bindedArtes[5] = ArteHandler.ARTES.SCATTERING_SLASH.ordinal();
-        bindedArtes[6] = ArteHandler.ARTES.DEMON_FANG.ordinal();
-        bindedArtes[7] = ArteHandler.ARTES.DEMON_FANG.ordinal();
-        bindedArtes[8] = ArteHandler.ARTES.DEMON_FANG.ordinal();
+        this.initializeMerchantVar();
+        this.initializeManaVar();
+        this.initializeDialogueVar();
+        this.initializeArtes();
+        this.initializeBufferCooldowns();
+        this.initializeArteUsageCount();
 
-        for (int i = 0; i < 9; i++)
-        {
-            this.bindedArtes[i] = -1;
-            this.primaryArtes[i] = -1;
-            this.secondaryArtes[i] = -1;
-        }
+        //privateData = player.getDataManager();
 
-        for (int i = 0; i < 256; i++)
-        {
-            this.questStatus[i] = -1;
-        }
-
-        buff_cooldown[0] = 0;
-        buff_cooldown[1] = 0;
-        buff_cooldown[2] = 0;
-        buff_cooldown[3] = 0;
-
-        privateData = player.getDataManager();
-        privateData.register(MANA, 0.0F);
-        privateData.register(REGEN, 0.0F);
-        privateData.register(ACC, 0.0F);
-
-        player.getAttributeMap().registerAttribute(PlayerAttributes.MAX_MANA);
-        player.getAttributeMap().registerAttribute(PlayerAttributes.MANA_REGEN);
-        player.getAttributeMap().registerAttribute(PlayerAttributes.PLAYER_ACC);
-        player.getAttributeMap().registerAttribute(PlayerAttributes.CAST_TICK_C);
-
-        for (int i = 0; i < arteCount.length; i++)
-        {
-            arteCount[i] = 0;
-        }
         //artes.initializeArteHandler(this.player);
     }
     public void onJoinWorld()
@@ -220,12 +155,7 @@ public class PlayerData implements IPlayerData
         if (this.player.world.isRemote)
         {
             Log.trace("PlayerData@onJoinWorld - Client sending sync req\n");
-            Necropolis_of_Nostalgia.packetHandler.sendToServer(new PlayerSyncCapability());
-
-            for (int i = 0; i < 256; i++)
-            {
-                this.questStatus[i] = -1;
-            }
+            this.initializeQuestStatus();
         }
     }
     public void onTick()
@@ -621,10 +551,6 @@ public class PlayerData implements IPlayerData
                 regenTime-= 3.0F / manaRegenTime;
             }
         }
-        if (isServerSide())
-        {
-            privateData.set(MANA, this.getMana());
-        }
     }
 
     public ArrayList<Integer> getArteGlobalIndex(boolean isPrimary)
@@ -840,7 +766,6 @@ public class PlayerData implements IPlayerData
     public void setMana(float points)
     {
         this.playerMana = points;
-        privateData.set(MANA, points);
     }
     public void setManaRegen(float points)
     {
@@ -849,7 +774,6 @@ public class PlayerData implements IPlayerData
     public void setManaRegenRate(float points)
     {
         this.regenRate = points;
-        privateData.set(REGEN, points);
     }
     public void setcurrentPArte(int key)
     {
@@ -1393,12 +1317,60 @@ public class PlayerData implements IPlayerData
         if (nbt.hasKey("mana"))
             setMana(nbt.getFloat("mana"));
     }
-
-    public void forceUpdate()
+    //Helpers
+    private void initializeArtes()
     {
-        privateData.setDirty(MANA);
+        for (int i = 0; i < ARTE_LENGTH; i++)
+        {
+            bindedArtes[i] = -1;
+            this.primaryArtes[i] = -1;
+            this.secondaryArtes[i] = -1;
+        }
     }
-    private boolean isServerSide() {
-        return this.player instanceof EntityPlayerMP;
+
+    private void initializeQuestStatus()
+    {
+        for (int i = 0; i < QUEST_LENGTH; i++)
+        {
+            this.questStatus[i] = -1;
+        }
     }
+
+    private void initializeBufferCooldowns()
+    {
+        for (int i = 0; i < BUFFER_LENGTH; i++)
+        {
+            buff_cooldown[i] = 0;
+        }
+    }
+    private void initializeArteUsageCount()
+    {
+        for (int i = 0; i < arteCount.length; i++)
+        {
+            arteCount[i] = 0;
+        }
+    }
+
+    private void initializeDialogueVar()
+    {
+        this.current_quest = -1;
+        this.current_quest_status = -1;
+        this.current_page = 0;
+        this.initializeQuestStatus();
+    }
+
+    private void initializeMerchantVar()
+    {
+        this.merchantPoints = 0;
+    }
+
+    private void initializeManaVar()
+    {
+        this.regenRate = 1.0F;
+        this.manaRegenTime = 1.25F;
+        this.regenTime = 0;
+        this.playermaxMana = 256;
+        this.playerMana = playermaxMana;
+    }
+
 }

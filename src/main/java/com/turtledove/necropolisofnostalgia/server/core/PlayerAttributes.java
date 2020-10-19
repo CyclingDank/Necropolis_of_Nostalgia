@@ -2,8 +2,9 @@ package com.turtledove.necropolisofnostalgia.server.core;
 
 import net.minecraft.entity.ai.attributes.RangedAttribute;
 
-public class PlayerAttributes {
-    public static final RangedAttribute MAX_MANA = (RangedAttribute) new RangedAttribute(null, "necropolisofnostalgia.maxMana", 0, 0, 1024)
+public class PlayerAttributes
+{
+    /*public static final RangedAttribute MAX_MANA = (RangedAttribute) new RangedAttribute(null, "necropolisofnostalgia.maxMana", 0, 0, 1024)
             .setDescription("Max Mana")
             .setShouldWatch(true);
 
@@ -19,4 +20,6 @@ public class PlayerAttributes {
     public static final RangedAttribute CAST_TICK_D= (RangedAttribute) new RangedAttribute(null, "necropolisofnostalgia.casttickduration", 0, 0, 1024)
             .setDescription("Cast Duration")
             .setShouldWatch(true);
+
+     */
 }

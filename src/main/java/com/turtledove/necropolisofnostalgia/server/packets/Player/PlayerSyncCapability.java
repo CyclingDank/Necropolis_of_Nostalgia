@@ -26,11 +26,6 @@ public class PlayerSyncCapability implements IMessage
         @Override
         public void handleServerMessage(final EntityPlayer player, final PlayerSyncCapability msg)
         {
-            PlayerData data = (PlayerData) NecropolisPlayerData.get(player);
-            if (data != null)
-            {
-                data.forceUpdate();
-            }
         }
     }
 }

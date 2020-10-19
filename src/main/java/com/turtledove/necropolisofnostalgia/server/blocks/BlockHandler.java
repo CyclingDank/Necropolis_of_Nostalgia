@@ -22,6 +22,8 @@ public final class BlockHandler
     public static final BlockRice RICE = null;
     public static final BlockCatTail CAT_TAIL = null;
     public static final BlockDuckWeed DUCKWEED = null;
+    public static final BlockForestShrub FOREST_SHRUB = null;
+
     public static final BlockBarrierBlastia BARRIER_BLASTIA = null;
     public static final BlockBlueprintBase YAM_BLUEPRINT = null;
     public static final BlockBlueprintBase FARM_PLOT = null;
@@ -30,6 +32,7 @@ public final class BlockHandler
     public static final BlockBlueprintBase DWIGT_BLUEPRINT = null;
     public static final BlockBlueprintBase RITA_BLUEPRINT = null;
     public static final BlockBlueprintBase CARLSON_BLUEPRINT = null;
+
     @SubscribeEvent
     public static void register(RegistryEvent.Register<Block> event)
     {
@@ -40,6 +43,7 @@ public final class BlockHandler
                 new BlockRice(),
                 new BlockCatTail(),
                 new BlockDuckWeed(),
+                new BlockForestShrub(),
                 new BlockBarrierBlastia(),
                 new BlockBlueprintBase("yam_blueprint", 0),
                 new BlockBlueprintBase("farm_plot", 1),

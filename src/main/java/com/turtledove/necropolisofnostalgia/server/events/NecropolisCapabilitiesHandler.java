@@ -20,9 +20,7 @@ import com.turtledove.necropolisofnostalgia.server.item.*;
 import com.turtledove.necropolisofnostalgia.server.packets.Player.SyncServerClientStamina;
 import com.turtledove.necropolisofnostalgia.server.packets.Sounds.SoundPacket;
 import com.turtledove.necropolisofnostalgia.server.sounds.NecropolisSounds;
-import com.turtledove.necropolisofnostalgia.server.world.generation.WorldGenCatTail;
-import com.turtledove.necropolisofnostalgia.server.world.generation.WorldGenKelp;
-import com.turtledove.necropolisofnostalgia.server.world.generation.WorldGenRepitifleur;
+import com.turtledove.necropolisofnostalgia.server.world.generation.*;
 import net.ilexiconn.llibrary.server.config.ConfigHandler;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -190,6 +188,15 @@ public class NecropolisCapabilitiesHandler
 
         WorldGenKelp kgen = new WorldGenKelp();
         kgen.generate(world, rand, world.getHeight(event.getPos().add(x, 0, y)));
+
+        if (biome.equals(Biomes.FOREST))
+        {
+            WorldGenForestFloor fGen = new WorldGenForestFloor();
+            fGen.generate(world, rand, world.getHeight(event.getPos().add(x, 0, y)));
+
+            WorldGenForestShrub fsGen = new WorldGenForestShrub();
+            fsGen.generate(world, rand, world.getHeight(event.getPos().add(x, 0, y)));
+        }
 
         if (rand.nextDouble() > 0.1) return;
 

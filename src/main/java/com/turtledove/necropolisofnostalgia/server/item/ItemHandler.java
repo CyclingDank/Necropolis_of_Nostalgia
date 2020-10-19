@@ -264,6 +264,8 @@ public final class ItemHandler
 
                 new ItemBlock(BlockHandler.REPITIFLEUR).setRegistryName(BlockHandler.REPITIFLEUR.getRegistryName()),
 
+                new ItemBlock(BlockHandler.FOREST_SHRUB).setRegistryName(BlockHandler.FOREST_SHRUB.getRegistryName()),
+
                 new ItemRiceSeed("rice_seed"),
 
                 new ItemCatTail("cat_tail"),

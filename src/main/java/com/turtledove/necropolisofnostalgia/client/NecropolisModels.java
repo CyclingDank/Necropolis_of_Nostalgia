@@ -28,6 +28,8 @@ public class NecropolisModels
         registerBlockModel(BlockHandler.REPITIFLEUR, "repitifleur");
         registerBlockModel(BlockHandler.KELP, "kelp");
 
+        registerBlockModel(BlockHandler.FOREST_SHRUB, "forest_shrub");
+
         registerBlockModel(BlockHandler.YAM_BLUEPRINT, "yam_blueprint");
         registerBlockModel(BlockHandler.FARM_PLOT, "farm_plot");
         registerBlockModel(BlockHandler.TEA_BLUEPRINT, "tea_blueprint");
