@@ -18,8 +18,9 @@ public class ArteDamageSource extends DamageSource {
 
     @Override
     public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn) {
-        String s = "death.attack.arte";
-        String s1 = s + ".player_" + new Random().nextInt(2);
-        return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
+        String translationKey = "death.attack.arte.player_" + new Random().nextInt(2);
+
+        return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ")
+                .appendSibling(new TextComponentTranslation(translationKey, entityLivingBaseIn.getDisplayName()));
     }
 }
