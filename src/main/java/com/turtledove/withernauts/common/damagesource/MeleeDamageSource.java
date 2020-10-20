@@ -1,4 +1,4 @@
-package com.turtledove.withernauts.common.damagesources;
+package com.turtledove.withernauts.common.damagesource;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.DamageSource;
