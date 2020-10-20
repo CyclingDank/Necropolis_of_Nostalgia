@@ -691,7 +691,7 @@ public class NecropolisCapabilitiesHandler
 
             if (!(player.getHeldItemMainhand().getItem() instanceof ItemSword))
             {
-                event.getEntity().attackEntityFrom(Withernauts.melee, attkMult);
+                event.getEntity().attackEntityFrom(new ArteDamageSource(), attkMult);
                 return;
             }
             if (event.getEntity() instanceof  EntityPlayer)
@@ -699,13 +699,13 @@ public class NecropolisCapabilitiesHandler
                 float pDamage = getPlayerDamage(player, (EntityPlayer)event.getEntity(), attkMult);
                 if ((int)pDamage == 0)
                     return;
-                event.getEntity().attackEntityFrom(Withernauts.melee, Math.max(1.0f,pDamage));
+                event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0f,pDamage));
             }
             else
             {
                 float pDamage =  getMobDamage(player, event.getEntity(), attkMult);
 
-                event.getEntity().attackEntityFrom(Withernauts.melee, Math.max(1.0f,pDamage));
+                event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0f,pDamage));
             }
             return;
         }
@@ -740,7 +740,7 @@ public class NecropolisCapabilitiesHandler
                     return;
                 }
 
-                event.getEntity().attackEntityFrom(Withernauts.melee, Math.max(1.0f, attkMult - def));
+                event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0f, attkMult - def));
             }
             return;
         }

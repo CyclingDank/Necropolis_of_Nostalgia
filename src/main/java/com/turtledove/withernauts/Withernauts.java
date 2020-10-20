@@ -5,13 +5,13 @@ import com.turtledove.withernauts.client.gui.NecropolisGuiHandler;
 import com.turtledove.withernauts.client.gui.NecropolisItemHandler;
 import com.turtledove.withernauts.client.inputs.ClientKeyHandler;
 import com.turtledove.withernauts.client.render.entity.*;
-import com.turtledove.withernauts.client.render.entity.RenderBeast;
 import com.turtledove.withernauts.client.render.npc.*;
 import com.turtledove.withernauts.server.core.IGuiStorage;
 import com.turtledove.withernauts.server.core.IPlayerData;
 import com.turtledove.withernauts.server.core.IPlayerDataStorage;
 import com.turtledove.withernauts.server.core.PlayerData;
 import com.turtledove.withernauts.server.entity.Artes.*;
+import com.turtledove.withernauts.server.entity.Spiral_Draco.EntitySpiral_Draco;
 import com.turtledove.withernauts.server.entity.enemies.*;
 import com.turtledove.withernauts.server.entity.items.EntityBook;
 import com.turtledove.withernauts.server.entity.npc.*;
@@ -22,34 +22,19 @@ import net.ilexiconn.llibrary.server.ServerEventHandler;
 import net.minecraft.world.GameRules;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.Logger;
 
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraft.util.DamageSource;
-import net.minecraft.entity.EntityLivingBase;
-
-import com.turtledove.withernauts.server.entity.Spiral_Draco.EntitySpiral_Draco;
-
-import java.util.Random;
-
 @Mod(modid = Withernauts.MODID, name = Withernauts.NAME, version = Withernauts.VERSION)
 public class Withernauts {
-//    public static DamageSource dracoFire;
-//    public static DamageSource artes;
-//    public static DamageSource physical_artes;
-
-    public static DamageSource melee;
 
     public static final String MODID = "turtdance";
     public static final String NAME = "Withernauts";
@@ -136,46 +121,8 @@ public class Withernauts {
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-//        dracoFire = new DamageSource("draco_fire") {
-//            @Override
-//            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
-//            {
-//                String s = "death.attack.draco_fire";
-//                String s1 = s + ".player_" + new Random().nextInt(2);
-//                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
-//            }
-//        }.setFireDamage();
-//        artes = new DamageSource("arte") {
-//            @Override
-//            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
-//            {
-//                String s = "death.attack.arte";
-//                String s1 = s + ".player_" + new Random().nextInt(2);
-//                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
-//            }
-//        }.setDamageBypassesArmor();
-//        physical_artes = new DamageSource("physical_artes") {
-//            @Override
-//            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
-//            {
-//                String s = "death.attack.physical_artes";
-//                String s1 = s + ".player_" + new Random().nextInt(2);
-//                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
-//            }
-//        }.setDamageBypassesArmor();
-//        melee = new DamageSource("melee") {
-//            @Override
-//            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
-//            {
-//                String s = "death.attack.melee";
-//                String s1 = s + ".player_" + new Random().nextInt(2);
-//                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
-//            }
-//        }.setDamageBypassesArmor();
-
         Withernauts.packetHandler = new PacketHandler(Withernauts.MODID);
         Withernauts.packetHandler.registerPackets();
-
     }
 
     @Mod.InstanceFactory
