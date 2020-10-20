@@ -45,9 +45,9 @@ import java.util.Random;
 
 @Mod(modid = Withernauts.MODID, name = Withernauts.NAME, version = Withernauts.VERSION)
 public class Withernauts {
-    public static DamageSource dracoFire;
-    public static DamageSource artes;
-    public static DamageSource physical_artes;
+//    public static DamageSource dracoFire;
+//    public static DamageSource artes;
+//    public static DamageSource physical_artes;
 
     public static DamageSource melee;
 
@@ -136,42 +136,43 @@ public class Withernauts {
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        dracoFire = new DamageSource("draco_fire") {
-            @Override
-            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
-            {
-                String s = "death.attack.draco_fire";
-                String s1 = s + ".player_" + new Random().nextInt(2);
-                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
-            }
-        }.setFireDamage();
-        artes = new DamageSource("arte") {
-            @Override
-            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
-            {
-                String s = "death.attack.arte";
-                String s1 = s + ".player_" + new Random().nextInt(2);
-                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
-            }
-        }.setDamageBypassesArmor();
-        physical_artes = new DamageSource("physical_artes") {
-            @Override
-            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
-            {
-                String s = "death.attack.physical_artes";
-                String s1 = s + ".player_" + new Random().nextInt(2);
-                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
-            }
-        }.setDamageBypassesArmor();
-        melee = new DamageSource("melee") {
-            @Override
-            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
-            {
-                String s = "death.attack.melee";
-                String s1 = s + ".player_" + new Random().nextInt(2);
-                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
-            }
-        }.setDamageBypassesArmor();
+//        dracoFire = new DamageSource("draco_fire") {
+//            @Override
+//            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
+//            {
+//                String s = "death.attack.draco_fire";
+//                String s1 = s + ".player_" + new Random().nextInt(2);
+//                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
+//            }
+//        }.setFireDamage();
+//        artes = new DamageSource("arte") {
+//            @Override
+//            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
+//            {
+//                String s = "death.attack.arte";
+//                String s1 = s + ".player_" + new Random().nextInt(2);
+//                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
+//            }
+//        }.setDamageBypassesArmor();
+//        physical_artes = new DamageSource("physical_artes") {
+//            @Override
+//            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
+//            {
+//                String s = "death.attack.physical_artes";
+//                String s1 = s + ".player_" + new Random().nextInt(2);
+//                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
+//            }
+//        }.setDamageBypassesArmor();
+//        melee = new DamageSource("melee") {
+//            @Override
+//            public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
+//            {
+//                String s = "death.attack.melee";
+//                String s1 = s + ".player_" + new Random().nextInt(2);
+//                return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
+//            }
+//        }.setDamageBypassesArmor();
+
         Withernauts.packetHandler = new PacketHandler(Withernauts.MODID);
         Withernauts.packetHandler.registerPackets();
 

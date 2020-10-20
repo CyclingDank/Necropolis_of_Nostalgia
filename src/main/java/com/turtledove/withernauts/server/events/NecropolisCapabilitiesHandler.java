@@ -3,6 +3,8 @@ package com.turtledove.withernauts.server.events;
 import com.google.common.base.MoreObjects;
 import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.gui.INecropolisItemHandler;
+import com.turtledove.withernauts.common.damagesources.ArteDamageSource;
+import com.turtledove.withernauts.common.damagesources.PhysicalArteDamageSource;
 import com.turtledove.withernauts.common.food.FoodEffects;
 import com.turtledove.withernauts.server.blocks.BlockHandler;
 import com.turtledove.withernauts.server.core.NecropolisPlayerData;
@@ -596,14 +598,14 @@ public class NecropolisCapabilitiesHandler
                 event.setCanceled(true);
                 NecropolisEntity tEntity = (NecropolisEntity)event.getEntity();
                 if (source.getImmediateSource() instanceof EntityDemonFang || source.getImmediateSource() instanceof EntityBeast || source.getImmediateSource() instanceof EntityDestructionField)
-                    event.getEntity().attackEntityFrom(Withernauts.physical_artes, Math.max(1.0f, attkMult - tEntity.getDef()));
+                    event.getEntity().attackEntityFrom(new PhysicalArteDamageSource(), Math.max(1.0f, attkMult - tEntity.getDef()));
                 else
                 {
                     if ( source.getImmediateSource() instanceof EntityCasted)
                     {
                         EntityCasted cEntity = (EntityCasted)source.getImmediateSource();
                         if (tEntity.getElementResponse(cEntity.getArte_element()) == 1)
-                            event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0F, attkMult - tEntity.getSDef()/4.0f));
+                            event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0F, attkMult - tEntity.getSDef()/4.0f));
                         else if (tEntity.getElementResponse(cEntity.getArte_element()) == -1)
                         {
                             event.setCanceled(true);
@@ -611,7 +613,7 @@ public class NecropolisCapabilitiesHandler
                         }
                         else
                         {
-                            event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0f, attkMult - tEntity.getSDef()));
+                            event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0f, attkMult - tEntity.getSDef()));
                         }
                     }
                     else
@@ -619,18 +621,18 @@ public class NecropolisCapabilitiesHandler
                         if (source.getImmediateSource() instanceof EntityNecropolisFireCharge)
                         {
                             if (tEntity.getElementResponse(1) == 1)
-                                event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0f, attkMult - tEntity.getSDef()/4.0f));
+                                event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0f, attkMult - tEntity.getSDef()/4.0f));
                             else if (tEntity.getElementResponse(1) == -1)
                             {
                                 event.setCanceled(true);
                             }
                             else
                             {
-                                event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0f, attkMult - tEntity.getSDef()));
+                                event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0f, attkMult - tEntity.getSDef()));
                             }
                         }
                         else
-                            event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0f, attkMult - tEntity.getSDef()));
+                            event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0f, attkMult - tEntity.getSDef()));
                     }
                 }
                 return;
@@ -674,9 +676,9 @@ public class NecropolisCapabilitiesHandler
                 }
 
                 if (source.getImmediateSource() instanceof EntityDemonFang || source.getImmediateSource() instanceof EntityBeast || source.getImmediateSource() instanceof EntityDestructionField)
-                    event.getEntity().attackEntityFrom(Withernauts.physical_artes, Math.max(1.0f, attkMult - def));
+                    event.getEntity().attackEntityFrom(new PhysicalArteDamageSource(), Math.max(1.0f, attkMult - def));
                 else
-                    event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0F, attkMult - sDef));
+                    event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0F, attkMult - sDef));
                 return;
             }
         }
