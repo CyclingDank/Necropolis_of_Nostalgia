@@ -4,6 +4,7 @@ import com.google.common.base.MoreObjects;
 import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.gui.INecropolisItemHandler;
 import com.turtledove.withernauts.common.damagesources.ArteDamageSource;
+import com.turtledove.withernauts.common.damagesources.MeleeDamageSource;
 import com.turtledove.withernauts.common.damagesources.PhysicalArteDamageSource;
 import com.turtledove.withernauts.common.food.FoodEffects;
 import com.turtledove.withernauts.server.blocks.BlockHandler;
@@ -691,7 +692,7 @@ public class NecropolisCapabilitiesHandler
 
             if (!(player.getHeldItemMainhand().getItem() instanceof ItemSword))
             {
-                event.getEntity().attackEntityFrom(new ArteDamageSource(), attkMult);
+                event.getEntity().attackEntityFrom(new MeleeDamageSource(), attkMult);
                 return;
             }
             if (event.getEntity() instanceof  EntityPlayer)
@@ -699,13 +700,13 @@ public class NecropolisCapabilitiesHandler
                 float pDamage = getPlayerDamage(player, (EntityPlayer)event.getEntity(), attkMult);
                 if ((int)pDamage == 0)
                     return;
-                event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0f,pDamage));
+                event.getEntity().attackEntityFrom(new MeleeDamageSource(), Math.max(1.0f,pDamage));
             }
             else
             {
                 float pDamage =  getMobDamage(player, event.getEntity(), attkMult);
 
-                event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0f,pDamage));
+                event.getEntity().attackEntityFrom(new MeleeDamageSource(), Math.max(1.0f,pDamage));
             }
             return;
         }
@@ -740,7 +741,7 @@ public class NecropolisCapabilitiesHandler
                     return;
                 }
 
-                event.getEntity().attackEntityFrom(new ArteDamageSource(), Math.max(1.0f, attkMult - def));
+                event.getEntity().attackEntityFrom(new MeleeDamageSource(), Math.max(1.0f, attkMult - def));
             }
             return;
         }
