@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.artes.SpecialArtes;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.artes.SpecialArte;
 import com.turtledove.withernauts.server.entity.Artes.EntityCast;
 import com.turtledove.withernauts.server.entity.Artes.EntityPhoton;
@@ -27,15 +27,15 @@ public class Photon extends SpecialArte
             this.player.world.spawnEntity(entityFireCast);
 
             this.player.playSound(NecropolisSounds.CASTING_40,1.0f,1.0f);
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SoundPacket(0,0.5f,1.0f),(EntityPlayerMP)this.player);
+            Withernauts.packetHandler.sendTo(new SoundPacket(0,0.5f,1.0f),(EntityPlayerMP)this.player);
         }
         else
         {
             this.player.playSound(NecropolisSounds.ARTE_COMPLETE,0.5f,1.0f);
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SoundPacket(8,1.0f,1.0f),(EntityPlayerMP)this.player);
+            Withernauts.packetHandler.sendTo(new SoundPacket(8,1.0f,1.0f),(EntityPlayerMP)this.player);
 
             this.player.playSound(NecropolisSounds.LIGHT_CAST,0.5f,1.0f);
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SoundPacket(10,1.0f,1.0f),(EntityPlayerMP)this.player);
+            Withernauts.packetHandler.sendTo(new SoundPacket(10,1.0f,1.0f),(EntityPlayerMP)this.player);
 
             Vec3d pV = this.player.getLookVec().normalize();
             double cX = pV.x;

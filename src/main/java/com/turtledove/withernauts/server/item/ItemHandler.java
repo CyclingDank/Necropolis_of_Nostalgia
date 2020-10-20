@@ -1,5 +1,5 @@
 package com.turtledove.withernauts.server.item;
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.blocks.BlockHandler;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.*;
@@ -8,8 +8,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@GameRegistry.ObjectHolder(Necropolis_of_Nostalgia.MODID)
-@Mod.EventBusSubscriber(modid = Necropolis_of_Nostalgia.MODID)
+@GameRegistry.ObjectHolder(Withernauts.MODID)
+@Mod.EventBusSubscriber(modid = Withernauts.MODID)
 public final class ItemHandler
 {
     public ItemHandler(){};

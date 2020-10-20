@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.gui;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.tiles.TileEntityBakeKettle;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiBakeKettle extends GuiContainer
 {
-    private static final ResourceLocation BAKE_KETTLE_INVENTROY = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/bake_kettle.png");
+    private static final ResourceLocation BAKE_KETTLE_INVENTROY = new ResourceLocation(Withernauts.MODID,"textures/gui/bake_kettle.png");
 
     private final InventoryPlayer playerInventory;
     private IInventory tileFurnace;

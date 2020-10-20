@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.particles;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 
 public class ParticleSlashAttack extends Particle
 {
-    private static final ResourceLocation SLASH_TEXTURE = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/sweep.png");
+    private static final ResourceLocation SLASH_TEXTURE = new ResourceLocation(Withernauts.MODID,"textures/entity/sweep.png");
     private static final VertexFormat VERTEX_FORMAT = (new VertexFormat()).addElement(DefaultVertexFormats.POSITION_3F).addElement(DefaultVertexFormats.TEX_2F).addElement(DefaultVertexFormats.COLOR_4UB).addElement(DefaultVertexFormats.TEX_2S).addElement(DefaultVertexFormats.NORMAL_3B).addElement(DefaultVertexFormats.PADDING_1B);
 
     private int NUM_FRAMES = 2;

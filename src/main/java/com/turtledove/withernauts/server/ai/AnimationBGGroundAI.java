@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.ai;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.entity.Artes.EntityPB;
 import com.turtledove.withernauts.server.entity.NecropolisEntity;
 import com.turtledove.withernauts.server.entity.enemies.EntityBedrockGolem;
@@ -88,7 +88,7 @@ public class AnimationBGGroundAI<T extends NecropolisEntity & IAnimatedEntity> e
                         {
                             double dX = targ.posX - this.entity.posX;
                             double dZ = targ.posZ - this.entity.posZ;
-                            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(dX / 4.0D, 0.5F, dZ / 4.0D),(EntityPlayerMP)targ);
+                            Withernauts.packetHandler.sendTo(new SyncPlayer(dX / 4.0D, 0.5F, dZ / 4.0D),(EntityPlayerMP)targ);
                             targ.motionY = 0.5F;
                         }
                     }

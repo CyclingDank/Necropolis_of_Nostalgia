@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.entity.npc;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.ai.EntityWMRoamAI;
 import com.turtledove.withernauts.server.core.IPlayerData;
 import com.turtledove.withernauts.server.entity.NecropolisNPC;
@@ -49,7 +49,7 @@ public class EntityWM extends NecropolisNPC
             IPlayerData iData = player.getCapability(NecropolisCapabilities.PLAYER_DATA_CAPABILITY, null);
             iData.syncMerchantPoints();
         }
-        player.openGui(Necropolis_of_Nostalgia.MODID,2,player.world,(int)player.posX, (int)player.posY, (int)player.posZ);
+        player.openGui(Withernauts.MODID,2,player.world,(int)player.posX, (int)player.posY, (int)player.posZ);
         return true;
     }
 

@@ -25,8 +25,8 @@ import scala.actors.threadpool.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-@Mod.EventBusSubscriber(modid = Necropolis_of_Nostalgia.MODID)
-public class  NecropolisMobs
+@Mod.EventBusSubscriber(modid = Withernauts.MODID)
+public class WithernautsMobs
 {
     private static int nextEntityId;
 
@@ -119,12 +119,12 @@ public class  NecropolisMobs
     }
     public static void registerTileEntity(Class<? extends TileEntity> entityClass, String name)
     {
-        GameRegistry.registerTileEntity(entityClass, new ResourceLocation(Necropolis_of_Nostalgia.MODID, name));
+        GameRegistry.registerTileEntity(entityClass, new ResourceLocation(Withernauts.MODID, name));
     }
 
     public static void registerMonster(EntityEntryBuilder builder, RegistryEvent.Register<EntityEntry> event, Class<? extends Entity> entityClass, String name, int mainColor, int subColor, Biome[] biomes, int weight, int min, int max) {
         builder.entity(entityClass);
-        builder.id(new ResourceLocation(Necropolis_of_Nostalgia.MODID, name), nextEntityId());
+        builder.id(new ResourceLocation(Withernauts.MODID, name), nextEntityId());
         builder.name(name);
         builder.egg(mainColor, subColor);
         builder.tracker(64, 1, true);
@@ -134,7 +134,7 @@ public class  NecropolisMobs
 
     public static void registerNPC(EntityEntryBuilder builder, RegistryEvent.Register<EntityEntry> event, Class<? extends Entity> entityClass, String name, int mainColor, int subColor, Biome[] biomes, int weight, int min, int max) {
         builder.entity(entityClass);
-        builder.id(new ResourceLocation(Necropolis_of_Nostalgia.MODID, name), nextEntityId());
+        builder.id(new ResourceLocation(Withernauts.MODID, name), nextEntityId());
         builder.name(name);
         builder.egg(mainColor, subColor);
         builder.tracker(64, 1, true);
@@ -148,7 +148,7 @@ public class  NecropolisMobs
         if (addEgg) {
             event.getRegistry().register(EntityEntryBuilder.create()
                     .entity(entityClass)
-                    .id(new ResourceLocation(Necropolis_of_Nostalgia.MODID, name), nextEntityId())
+                    .id(new ResourceLocation(Withernauts.MODID, name), nextEntityId())
                     .name(name)
                     .tracker(trackingDistance, 1, true)
                     .egg(mainColor, subColor)
@@ -159,7 +159,7 @@ public class  NecropolisMobs
         {
             event.getRegistry().register(EntityEntryBuilder.create()
                     .entity(entityClass)
-                    .id(new ResourceLocation(Necropolis_of_Nostalgia.MODID, name), nextEntityId())
+                    .id(new ResourceLocation(Withernauts.MODID, name), nextEntityId())
                     .name(name)
                     .tracker(trackingDistance, 1, true)
                     .build()
@@ -170,7 +170,7 @@ public class  NecropolisMobs
     {
         event.getRegistry().register(EntityEntryBuilder.create()
                 .entity(entityClass)
-                .id(new ResourceLocation(Necropolis_of_Nostalgia.MODID, name), nextEntityId())
+                .id(new ResourceLocation(Withernauts.MODID, name), nextEntityId())
                 .name(name)
                 .tracker(trackingDistance, 1, true)
                 .egg(mainColor, subColor)

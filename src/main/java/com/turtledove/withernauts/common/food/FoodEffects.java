@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.common.food;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.common.recipe.NecropolisCookingRecipes;
 import net.minecraft.item.ItemFood;
 import net.minecraft.util.ResourceLocation;
@@ -11,7 +11,7 @@ public class FoodEffects
 
     public int[] getStatBoosts(ItemFood food)
     {
-        if (food.getRegistryName().equals(new ResourceLocation(Necropolis_of_Nostalgia.MODID,"steak_potato")))
+        if (food.getRegistryName().equals(new ResourceLocation(Withernauts.MODID,"steak_potato")))
         {
             int[] stats = new int[6];
             stats[0] = 6;
@@ -22,7 +22,7 @@ public class FoodEffects
             stats[5] = 0;
             return stats;
         }
-        else if (food.getRegistryName().equals(new ResourceLocation(Necropolis_of_Nostalgia.MODID,"toasted_sandwich")))
+        else if (food.getRegistryName().equals(new ResourceLocation(Withernauts.MODID,"toasted_sandwich")))
         {
             int[] stats = new int[6];
             stats[0] = 6;
@@ -33,7 +33,7 @@ public class FoodEffects
             stats[5] = 0;
             return stats;
         }
-        else if (food.getRegistryName().equals(new ResourceLocation(Necropolis_of_Nostalgia.MODID,"roast")))
+        else if (food.getRegistryName().equals(new ResourceLocation(Withernauts.MODID,"roast")))
         {
             int[] stats = new int[6];
             stats[0] = 15;
@@ -44,7 +44,7 @@ public class FoodEffects
             stats[5] = 0;
             return stats;
         }
-        else if (food.getRegistryName().equals(new ResourceLocation(Necropolis_of_Nostalgia.MODID,"pork_stew")))
+        else if (food.getRegistryName().equals(new ResourceLocation(Withernauts.MODID,"pork_stew")))
         {
             int[] stats = new int[6];
             stats[0] = 10;
@@ -55,7 +55,7 @@ public class FoodEffects
             stats[5] = 1200;
             return stats;
         }
-        else if (food.getRegistryName().equals(new ResourceLocation(Necropolis_of_Nostalgia.MODID,"seafood_fried_rice")))
+        else if (food.getRegistryName().equals(new ResourceLocation(Withernauts.MODID,"seafood_fried_rice")))
         {
             int[] stats = new int[6];
             stats[0] = 15;
@@ -66,7 +66,7 @@ public class FoodEffects
             stats[5] = 0;
             return stats;
         }
-        else if (food.getRegistryName().equals(new ResourceLocation(Necropolis_of_Nostalgia.MODID,"omurice")))
+        else if (food.getRegistryName().equals(new ResourceLocation(Withernauts.MODID,"omurice")))
         {
             int[] stats = new int[6];
             stats[0] = 4;
@@ -77,7 +77,7 @@ public class FoodEffects
             stats[5] = 0;
             return stats;
         }
-        else if (food.getRegistryName().equals(new ResourceLocation(Necropolis_of_Nostalgia.MODID,"steamed_rice")))
+        else if (food.getRegistryName().equals(new ResourceLocation(Withernauts.MODID,"steamed_rice")))
         {
             int[] stats = new int[6];
             stats[0] = 0;
@@ -88,7 +88,7 @@ public class FoodEffects
             stats[5] = 0;
             return stats;
         }
-        else if (food.getRegistryName().equals(new ResourceLocation(Necropolis_of_Nostalgia.MODID,"mushroom_burger")))
+        else if (food.getRegistryName().equals(new ResourceLocation(Withernauts.MODID,"mushroom_burger")))
         {
             int[] stats = new int[6];
             stats[0] = 6;
@@ -99,7 +99,7 @@ public class FoodEffects
             stats[5] = 0;
             return stats;
         }
-        else if (food.getRegistryName().equals(new ResourceLocation(Necropolis_of_Nostalgia.MODID,"veggie_stir_fry")))
+        else if (food.getRegistryName().equals(new ResourceLocation(Withernauts.MODID,"veggie_stir_fry")))
         {
             int[] stats = new int[6];
             stats[0] = 10;

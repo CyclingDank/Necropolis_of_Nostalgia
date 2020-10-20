@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.ai;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.entity.NecropolisEntity;
 import com.turtledove.withernauts.server.entity.enemies.EntityBedrockGolem;
 import com.turtledove.withernauts.server.packets.Player.SyncPlayer;
@@ -70,7 +70,7 @@ public class AnimationBGSwipeAI<T extends NecropolisEntity & IAnimatedEntity> ex
                         boolean hitTest = targ.attackEntityFrom(DamageSource.causeMobDamage(this.entity), 25.0F);
                         if (targ instanceof EntityPlayer)
                         {
-                            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(0.0D, 0.5F, 0.0D),(EntityPlayerMP)targ);
+                            Withernauts.packetHandler.sendTo(new SyncPlayer(0.0D, 0.5F, 0.0D),(EntityPlayerMP)targ);
                             targ.motionY = 0.5F;
                         }
                     }

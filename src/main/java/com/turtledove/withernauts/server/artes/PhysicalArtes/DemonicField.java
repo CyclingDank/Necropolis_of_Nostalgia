@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.artes.PhysicalArtes;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.artes.PhysicalArte;
 import com.turtledove.withernauts.server.core.NecropolisPlayerData;
 import com.turtledove.withernauts.server.core.PlayerData;
@@ -37,7 +37,7 @@ public class DemonicField extends PhysicalArte {
             entityDemonFang.setLocationAndAngles(this.player.posX + slope.x,this.player.posY, this.player.posZ + slope.z, this.player.rotationYaw, 0.0F);
             this.player.world.spawnEntity(entityDemonFang);
             this.player.playSound(NecropolisSounds.DEMON_FANG,1.0f,1.0f);
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SoundPacket(2,1.0f,1.0f),(EntityPlayerMP)this.player);
+            Withernauts.packetHandler.sendTo(new SoundPacket(2,1.0f,1.0f),(EntityPlayerMP)this.player);
         }
         else
         {

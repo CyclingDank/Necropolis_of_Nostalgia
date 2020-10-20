@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.blocks;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.tiles.TileEntityBakeKettle;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.state.IBlockState;
@@ -48,7 +48,7 @@ public class BlockBakeKettle extends BlockContainer
     }
 
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        playerIn.openGui(Necropolis_of_Nostalgia.MODID,1,worldIn,pos.getX(),pos.getY(),pos.getZ());
+        playerIn.openGui(Withernauts.MODID,1,worldIn,pos.getX(),pos.getY(),pos.getZ());
         return true;
     }
 

@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.artes.PhysicalArtes;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.artes.PhysicalArte;
 import com.turtledove.withernauts.server.packets.Player.SyncPlayer;
 import net.minecraft.entity.Entity;
@@ -35,7 +35,7 @@ public class RisingWhirlwind extends PhysicalArte
                 {
                     if (player.onGround == false)
                     {
-                        Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(0.0D, 0.7F, 0.),(EntityPlayerMP)this.player);
+                        Withernauts.packetHandler.sendTo(new SyncPlayer(0.0D, 0.7F, 0.),(EntityPlayerMP)this.player);
 
                         float rate = 0.7F;
                         if (arte_stage == 0)
@@ -44,7 +44,7 @@ public class RisingWhirlwind extends PhysicalArte
                         }
                         if (entity instanceof EntityPlayer)
                         {
-                            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(0.0D, rate, 0.),(EntityPlayerMP)entity);
+                            Withernauts.packetHandler.sendTo(new SyncPlayer(0.0D, rate, 0.),(EntityPlayerMP)entity);
                         }
                         else
                             entity.motionY = rate;

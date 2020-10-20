@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.inputs;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.gui.*;
 import com.turtledove.withernauts.client.particles.ParticleSlashAttack;
 import com.turtledove.withernauts.server.core.IPlayerData;
@@ -97,7 +97,7 @@ public class ClientKeyHandler
                         return;
                 }
 
-                Necropolis_of_Nostalgia.packetHandler.sendToServer(new SyncArtesOnClient(data.bindedArtes, data.arteCount, -1));
+                Withernauts.packetHandler.sendToServer(new SyncArtesOnClient(data.bindedArtes, data.arteCount, -1));
                 if (!data.getInBufferZone())
                 {
                     event.setCanceled(true);
@@ -110,7 +110,7 @@ public class ClientKeyHandler
                         data.setMouseClick(0);
                         data.setActivatepArte(true);
                         //Necropolis_of_Nostalgia.packetHandler.sendToServer(new MessagePacket(data.getCurrentArteIndex(),0,0.0,0.0,0.0));
-                        Necropolis_of_Nostalgia.packetHandler.sendToServer(new SoundPacket(0,0.4F,1.0F));
+                        Withernauts.packetHandler.sendToServer(new SoundPacket(0,0.4F,1.0F));
                         doSwordSlash(data);
                         data.consumeMana(data.getCurrentArteTP(0));
                     }
@@ -129,7 +129,7 @@ public class ClientKeyHandler
                     if (data.getClassWeapons()[0] != data.getCurrent_weapon() && data.getClassWeapons()[1] != data.getCurrent_weapon())
                         return;
                 }
-                Necropolis_of_Nostalgia.packetHandler.sendToServer(new SyncArtesOnClient(data.bindedArtes, data.arteCount, -1));
+                Withernauts.packetHandler.sendToServer(new SyncArtesOnClient(data.bindedArtes, data.arteCount, -1));
                 if (!data.getInBufferZone())
                 {
                     event.setCanceled(true);
@@ -142,7 +142,7 @@ public class ClientKeyHandler
                         data.setMouseClick(2);
                         data.setActivatepArte(true);
                         //Necropolis_of_Nostalgia.packetHandler.sendToServer(new MessagePacket(data.getCurrentArteIndex(),0,0.0,0.0,0.0));
-                        Necropolis_of_Nostalgia.packetHandler.sendToServer(new SoundPacket(0,0.2F,1.0F));
+                        Withernauts.packetHandler.sendToServer(new SoundPacket(0,0.2F,1.0F));
                         doSwordSlash(data);
                         data.consumeMana(data.getCurrentArteTP(2));
                     }
@@ -161,7 +161,7 @@ public class ClientKeyHandler
                     if (data.getClassWeapons()[0] != data.getCurrent_weapon() && data.getClassWeapons()[1] != data.getCurrent_weapon())
                         return;
                 }
-                Necropolis_of_Nostalgia.packetHandler.sendToServer(new SyncArtesOnClient(data.bindedArtes, data.arteCount, -1));
+                Withernauts.packetHandler.sendToServer(new SyncArtesOnClient(data.bindedArtes, data.arteCount, -1));
                 if (!data.getInBufferZone())
                 {
                     event.setCanceled(true);
@@ -174,7 +174,7 @@ public class ClientKeyHandler
                         data.setMouseClick(1);
                         data.setActivatepArte(true);
                         //Necropolis_of_Nostalgia.packetHandler.sendToServer(new MessagePacket(data.getCurrentArteIndex(),0,0.0,0.0,0.0));
-                        Necropolis_of_Nostalgia.packetHandler.sendToServer(new SoundPacket(0,0.4F,1.0F));
+                        Withernauts.packetHandler.sendToServer(new SoundPacket(0,0.4F,1.0F));
                         doSwordSlash(data);
                         data.consumeMana(data.getCurrentArteTP(1));
                     }
@@ -247,7 +247,7 @@ public class ClientKeyHandler
                 if (event.getGui() instanceof GuiInventory)
                 {
                     event.setCanceled(true);
-                    Necropolis_of_Nostalgia.packetHandler.sendToServer(new InventoryPacket());
+                    Withernauts.packetHandler.sendToServer(new InventoryPacket());
                 }
             }
         }

@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.render.entity;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.model.entity.ModelPB;
 import com.turtledove.withernauts.server.entity.Artes.EntityPB;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -9,8 +9,8 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPB extends RenderLiving<EntityPB>
 {
-    private static final ResourceLocation PB_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/precipice_blades.png");
-    private static final ResourceLocation CRACKED_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/precipice_blades_cracked.png");
+    private static final ResourceLocation PB_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/precipice_blades.png");
+    private static final ResourceLocation CRACKED_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/precipice_blades_cracked.png");
 
     public RenderPB(RenderManager mgr)
     {

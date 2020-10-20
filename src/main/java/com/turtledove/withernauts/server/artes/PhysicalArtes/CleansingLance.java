@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.artes.PhysicalArtes;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.artes.PhysicalArte;
 import com.turtledove.withernauts.server.packets.Player.SyncPlayer;
 import net.minecraft.entity.Entity;
@@ -43,12 +43,12 @@ public class CleansingLance  extends PhysicalArte
                         d4 = 16.0D;
                         d5 = 0.4;
                         if (this.player.onGround == false)
-                            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(entity.motionX, d5, entity.motionZ),(EntityPlayerMP)this.player);
+                            Withernauts.packetHandler.sendTo(new SyncPlayer(entity.motionX, d5, entity.motionZ),(EntityPlayerMP)this.player);
                     }
 
                     if (entity instanceof EntityPlayer)
                     {
-                        Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(d2 / d4, d5,  d3 / d4),(EntityPlayerMP)entity);
+                        Withernauts.packetHandler.sendTo(new SyncPlayer(d2 / d4, d5,  d3 / d4),(EntityPlayerMP)entity);
                     }
                     else
                     {

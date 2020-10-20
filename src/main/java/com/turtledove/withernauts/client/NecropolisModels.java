@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.blocks.BlockHandler;
 import com.turtledove.withernauts.server.item.ItemHandler;
 import net.minecraft.block.Block;
@@ -14,7 +14,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-@Mod.EventBusSubscriber(value = Side.CLIENT, modid = Necropolis_of_Nostalgia.MODID)
+@Mod.EventBusSubscriber(value = Side.CLIENT, modid = Withernauts.MODID)
 public class NecropolisModels
 {
     private NecropolisModels() {};
@@ -285,7 +285,7 @@ public class NecropolisModels
     }
 
     private static ModelResourceLocation registerItemModel(Item item, int id, String name) {
-        ModelResourceLocation resource = new ModelResourceLocation(Necropolis_of_Nostalgia.MODID + ":" + name, "inventory");
+        ModelResourceLocation resource = new ModelResourceLocation(Withernauts.MODID + ":" + name, "inventory");
         ModelLoader.setCustomModelResourceLocation(item, id, resource);
         return resource;
     }

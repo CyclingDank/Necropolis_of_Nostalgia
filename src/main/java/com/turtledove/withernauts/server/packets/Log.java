@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.packets;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import org.apache.logging.log4j.Level;
 import org.lwjgl.Sys;
 
@@ -18,7 +18,7 @@ public class Log {
      * @param arguments the arguments
      */
     public static void fatal(String format, Object... arguments) {
-        Necropolis_of_Nostalgia.LOG.fatal(format, arguments);
+        Withernauts.LOG.fatal(format, arguments);
     }
 
     /**
@@ -78,7 +78,7 @@ public class Log {
     }
 
     private static void log(Level level, String text, Object... format) {
-        Necropolis_of_Nostalgia.LOG.log(level, String.format(text, format));
+        Withernauts.LOG.log(level, String.format(text, format));
     }
 
     /**

@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.item;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.core.NecropolisPlayerData;
 import com.turtledove.withernauts.server.core.PlayerData;
 import com.turtledove.withernauts.server.packets.Player.SyncServerClientStamina;
@@ -87,11 +87,11 @@ public class ItemNecropolisWeapon extends ItemSword
         }
         if (stringContains("Adrenaline"))
         {
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncServerClientStamina(-10),(EntityPlayerMP)playerIn);
+            Withernauts.packetHandler.sendTo(new SyncServerClientStamina(-10),(EntityPlayerMP)playerIn);
         }
         if (stringContains("Adrenaline 2"))
         {
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncServerClientStamina(-20),(EntityPlayerMP)playerIn);
+            Withernauts.packetHandler.sendTo(new SyncServerClientStamina(-20),(EntityPlayerMP)playerIn);
         }
         if (stringContains("Light Magic"))
         {

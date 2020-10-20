@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.render.entity;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.model.entity.ModelBookBase;
 import com.turtledove.withernauts.server.entity.items.EntityBook;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -9,13 +9,13 @@ import net.minecraft.util.ResourceLocation;
 
 public class RendereBookBase  extends RenderLiving<EntityBook>
 {
-    private static final ResourceLocation PSYCHEDELIA = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/psychedelia.png");
+    private static final ResourceLocation PSYCHEDELIA = new ResourceLocation(Withernauts.MODID,"textures/entity/psychedelia.png");
 
-    private static final ResourceLocation GRIMOIRE = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/grimoire.png");
+    private static final ResourceLocation GRIMOIRE = new ResourceLocation(Withernauts.MODID,"textures/entity/grimoire.png");
 
-    private static final ResourceLocation SERAPHIM = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/seraphim.png");
+    private static final ResourceLocation SERAPHIM = new ResourceLocation(Withernauts.MODID,"textures/entity/seraphim.png");
 
-    private static final ResourceLocation NOTUNG = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/notung.png");
+    private static final ResourceLocation NOTUNG = new ResourceLocation(Withernauts.MODID,"textures/entity/notung.png");
 
 
     public RendereBookBase(RenderManager mgr)

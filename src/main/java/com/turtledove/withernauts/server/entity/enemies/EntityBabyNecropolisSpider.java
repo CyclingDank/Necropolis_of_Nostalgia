@@ -1,7 +1,7 @@
 package com.turtledove.withernauts.server.entity.enemies;
 
 import com.google.common.base.Predicates;
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.ai.*;
 import com.turtledove.withernauts.server.entity.NecropolisEntity;
 import com.turtledove.withernauts.server.packets.Player.PlayerParticlePacket;
@@ -146,7 +146,7 @@ public class EntityBabyNecropolisSpider extends NecropolisEntity
 
                         double d0 = this.posX + (double)f2;
                         double d1 = this.posZ + (double)f3;
-                        Necropolis_of_Nostalgia.packetHandler.sendToAll(new PlayerParticlePacket(1,  d0, this.posY, d1, 0.0D, 0.0D, 0.0D));
+                        Withernauts.packetHandler.sendToAll(new PlayerParticlePacket(1,  d0, this.posY, d1, 0.0D, 0.0D, 0.0D));
                     }
                     this.playSound(NecropolisSounds.BABY_SPIDER_GONE, 1.0f, 1.0f);
                     this.setDead();

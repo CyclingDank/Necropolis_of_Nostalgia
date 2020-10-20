@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.render.entity;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.model.entity.ModelJudgement;
 import com.turtledove.withernauts.server.entity.Artes.EntityJudgement;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderJudgement  extends RenderLiving<EntityJudgement>
 {
-    private static final ResourceLocation NEUTRAL_CAST_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/judgement.png");
+    private static final ResourceLocation NEUTRAL_CAST_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/judgement.png");
 
     public RenderJudgement(RenderManager mgr)
     {

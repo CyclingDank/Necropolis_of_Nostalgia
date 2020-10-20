@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.artes.PhysicalArtes;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.artes.PhysicalArte;
 import com.turtledove.withernauts.server.packets.Player.SyncPlayer;
 import net.minecraft.entity.Entity;
@@ -37,14 +37,14 @@ public class TwinHurricaneBlade extends PhysicalArte
                 {
                     if (arte_stage == 0 || arte_stage == 2)
                     {
-                        Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(0.0D, 0.7F, 0.),(EntityPlayerMP)this.player);
+                        Withernauts.packetHandler.sendTo(new SyncPlayer(0.0D, 0.7F, 0.),(EntityPlayerMP)this.player);
                         entity.motionY += 0.7F;
                         entity.attackEntityFrom(DamageSource.causeMobDamage(player),1.0F);
 
                     }
                     else
                     {
-                        Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(0.0D, -0.7F, 0.),(EntityPlayerMP)this.player);
+                        Withernauts.packetHandler.sendTo(new SyncPlayer(0.0D, -0.7F, 0.),(EntityPlayerMP)this.player);
                         entity.motionY += -0.7F;
                         entity.attackEntityFrom(DamageSource.causeMobDamage(player),2.0F);
 

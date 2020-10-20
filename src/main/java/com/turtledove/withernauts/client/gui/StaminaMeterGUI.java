@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.gui;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.core.NecropolisPlayerData;
 import com.turtledove.withernauts.server.core.PlayerData;
 import net.minecraft.client.Minecraft;
@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class StaminaMeterGUI extends Gui
 {
-    private static final ResourceLocation TP_BAR = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/xp_bar.png");
+    private static final ResourceLocation TP_BAR = new ResourceLocation(Withernauts.MODID,"textures/gui/xp_bar.png");
 
     public StaminaMeterGUI(Minecraft mc)
     {

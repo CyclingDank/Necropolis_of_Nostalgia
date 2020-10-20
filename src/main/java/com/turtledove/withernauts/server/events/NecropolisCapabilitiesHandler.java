@@ -1,7 +1,7 @@
 package com.turtledove.withernauts.server.events;
 
 import com.google.common.base.MoreObjects;
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.gui.INecropolisItemHandler;
 import com.turtledove.withernauts.common.food.FoodEffects;
 import com.turtledove.withernauts.server.blocks.BlockHandler;
@@ -61,8 +61,8 @@ import java.util.Random;
 @Mod.EventBusSubscriber
 public class NecropolisCapabilitiesHandler
 {
-    public static final ResourceLocation PLAYER_DATA = new ResourceLocation(Necropolis_of_Nostalgia.MODID, "player_data");
-    public static final ResourceLocation GUI_DATA = new ResourceLocation(Necropolis_of_Nostalgia.MODID, "gui_data");
+    public static final ResourceLocation PLAYER_DATA = new ResourceLocation(Withernauts.MODID, "player_data");
+    public static final ResourceLocation GUI_DATA = new ResourceLocation(Withernauts.MODID, "gui_data");
     static int food_cooldown = 0;
     Random rand = new Random();
 
@@ -420,7 +420,7 @@ public class NecropolisCapabilitiesHandler
     {
         if (event.getEntityLiving() instanceof EntityPlayer)
         {
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SoundPacket(5,1.0f,1.0f),(EntityPlayerMP)event.getEntityLiving());
+            Withernauts.packetHandler.sendTo(new SoundPacket(5,1.0f,1.0f),(EntityPlayerMP)event.getEntityLiving());
         }
     }
 
@@ -480,7 +480,7 @@ public class NecropolisCapabilitiesHandler
                     {
                         if (Math.random() < nItem.getItemChance())
                         {
-                            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncServerClientStamina(-200),(EntityPlayerMP)aPlayer);
+                            Withernauts.packetHandler.sendTo(new SyncServerClientStamina(-200),(EntityPlayerMP)aPlayer);
                         }
                     }
                     else if (tName.contains("sacred_armor"))
@@ -596,14 +596,14 @@ public class NecropolisCapabilitiesHandler
                 event.setCanceled(true);
                 NecropolisEntity tEntity = (NecropolisEntity)event.getEntity();
                 if (source.getImmediateSource() instanceof EntityDemonFang || source.getImmediateSource() instanceof EntityBeast || source.getImmediateSource() instanceof EntityDestructionField)
-                    event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.physical_artes, Math.max(1.0f, attkMult - tEntity.getDef()));
+                    event.getEntity().attackEntityFrom(Withernauts.physical_artes, Math.max(1.0f, attkMult - tEntity.getDef()));
                 else
                 {
                     if ( source.getImmediateSource() instanceof EntityCasted)
                     {
                         EntityCasted cEntity = (EntityCasted)source.getImmediateSource();
                         if (tEntity.getElementResponse(cEntity.getArte_element()) == 1)
-                            event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.artes, Math.max(1.0F, attkMult - tEntity.getSDef()/4.0f));
+                            event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0F, attkMult - tEntity.getSDef()/4.0f));
                         else if (tEntity.getElementResponse(cEntity.getArte_element()) == -1)
                         {
                             event.setCanceled(true);
@@ -611,7 +611,7 @@ public class NecropolisCapabilitiesHandler
                         }
                         else
                         {
-                            event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.artes, Math.max(1.0f, attkMult - tEntity.getSDef()));
+                            event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0f, attkMult - tEntity.getSDef()));
                         }
                     }
                     else
@@ -619,18 +619,18 @@ public class NecropolisCapabilitiesHandler
                         if (source.getImmediateSource() instanceof EntityNecropolisFireCharge)
                         {
                             if (tEntity.getElementResponse(1) == 1)
-                                event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.artes, Math.max(1.0f, attkMult - tEntity.getSDef()/4.0f));
+                                event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0f, attkMult - tEntity.getSDef()/4.0f));
                             else if (tEntity.getElementResponse(1) == -1)
                             {
                                 event.setCanceled(true);
                             }
                             else
                             {
-                                event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.artes, Math.max(1.0f, attkMult - tEntity.getSDef()));
+                                event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0f, attkMult - tEntity.getSDef()));
                             }
                         }
                         else
-                            event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.artes, Math.max(1.0f, attkMult - tEntity.getSDef()));
+                            event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0f, attkMult - tEntity.getSDef()));
                     }
                 }
                 return;
@@ -666,17 +666,17 @@ public class NecropolisCapabilitiesHandler
                         staminaDecrease += (int)(staminaRatio * 1600.0F);
                     if (staminaDecrease > 0)
                     {
-                        Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncServerClientStamina(staminaDecrease),(EntityPlayerMP)tEntity);
+                        Withernauts.packetHandler.sendTo(new SyncServerClientStamina(staminaDecrease),(EntityPlayerMP)tEntity);
                     }
-                    Necropolis_of_Nostalgia.packetHandler.sendTo(new SoundPacket(3,1.0F,1.0F),(EntityPlayerMP)tEntity);
+                    Withernauts.packetHandler.sendTo(new SoundPacket(3,1.0F,1.0F),(EntityPlayerMP)tEntity);
                     tEntity.playSound(NecropolisSounds.GUARD_HIT, 1.0F,1.0F);
                     return;
                 }
 
                 if (source.getImmediateSource() instanceof EntityDemonFang || source.getImmediateSource() instanceof EntityBeast || source.getImmediateSource() instanceof EntityDestructionField)
-                    event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.physical_artes, Math.max(1.0f, attkMult - def));
+                    event.getEntity().attackEntityFrom(Withernauts.physical_artes, Math.max(1.0f, attkMult - def));
                 else
-                    event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.artes, Math.max(1.0F, attkMult - sDef));
+                    event.getEntity().attackEntityFrom(Withernauts.artes, Math.max(1.0F, attkMult - sDef));
                 return;
             }
         }
@@ -689,7 +689,7 @@ public class NecropolisCapabilitiesHandler
 
             if (!(player.getHeldItemMainhand().getItem() instanceof ItemSword))
             {
-                event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.melee, attkMult);
+                event.getEntity().attackEntityFrom(Withernauts.melee, attkMult);
                 return;
             }
             if (event.getEntity() instanceof  EntityPlayer)
@@ -697,13 +697,13 @@ public class NecropolisCapabilitiesHandler
                 float pDamage = getPlayerDamage(player, (EntityPlayer)event.getEntity(), attkMult);
                 if ((int)pDamage == 0)
                     return;
-                event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.melee, Math.max(1.0f,pDamage));
+                event.getEntity().attackEntityFrom(Withernauts.melee, Math.max(1.0f,pDamage));
             }
             else
             {
                 float pDamage =  getMobDamage(player, event.getEntity(), attkMult);
 
-                event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.melee, Math.max(1.0f,pDamage));
+                event.getEntity().attackEntityFrom(Withernauts.melee, Math.max(1.0f,pDamage));
             }
             return;
         }
@@ -732,13 +732,13 @@ public class NecropolisCapabilitiesHandler
                         staminaDecrease = 1600;
                     else
                         staminaDecrease += (int)(staminaRatio * 1600.0F);
-                    Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncServerClientStamina(staminaDecrease),(EntityPlayerMP)player);
-                    Necropolis_of_Nostalgia.packetHandler.sendTo(new SoundPacket(3,1.0F,1.0F),(EntityPlayerMP)player);
+                    Withernauts.packetHandler.sendTo(new SyncServerClientStamina(staminaDecrease),(EntityPlayerMP)player);
+                    Withernauts.packetHandler.sendTo(new SoundPacket(3,1.0F,1.0F),(EntityPlayerMP)player);
                     player.playSound(NecropolisSounds.GUARD_HIT, 1.0F,1.0F);
                     return;
                 }
 
-                event.getEntity().attackEntityFrom(Necropolis_of_Nostalgia.melee, Math.max(1.0f, attkMult - def));
+                event.getEntity().attackEntityFrom(Withernauts.melee, Math.max(1.0f, attkMult - def));
             }
             return;
         }
@@ -773,8 +773,8 @@ public class NecropolisCapabilitiesHandler
                 staminaDecrease = 1600;
             else
                 staminaDecrease += (int)(staminaRatio * 1600.0F);
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncServerClientStamina(staminaDecrease),(EntityPlayerMP)target);
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SoundPacket(3,1.0F,1.0F),(EntityPlayerMP)target);
+            Withernauts.packetHandler.sendTo(new SyncServerClientStamina(staminaDecrease),(EntityPlayerMP)target);
+            Withernauts.packetHandler.sendTo(new SoundPacket(3,1.0F,1.0F),(EntityPlayerMP)target);
             target.playSound(NecropolisSounds.GUARD_HIT, 1.0F,1.0F);
             return 0.0F;
         }

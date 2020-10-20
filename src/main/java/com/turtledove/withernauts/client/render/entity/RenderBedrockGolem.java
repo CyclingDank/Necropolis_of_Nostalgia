@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.render.entity;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.model.entity.ModelBedrockGolem;
 import com.turtledove.withernauts.server.entity.enemies.EntityBedrockGolem;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -9,11 +9,11 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBedrockGolem extends RenderLiving<EntityBedrockGolem>
 {
-    private static final ResourceLocation BG_1_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/bedrock_golem_1.png");
-    private static final ResourceLocation BG_2_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/bedrock_golem_2.png");
-    private static final ResourceLocation BG_3_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/bedrock_golem_3.png");
-    private static final ResourceLocation BG_4_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/bedrock_golem_4.png");
-    private static final ResourceLocation BG_5_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/bedrock_golem_5.png");
+    private static final ResourceLocation BG_1_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/bedrock_golem_1.png");
+    private static final ResourceLocation BG_2_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/bedrock_golem_2.png");
+    private static final ResourceLocation BG_3_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/bedrock_golem_3.png");
+    private static final ResourceLocation BG_4_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/bedrock_golem_4.png");
+    private static final ResourceLocation BG_5_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/bedrock_golem_5.png");
 
     private static final ResourceLocation[] textArray = new ResourceLocation[]{BG_1_TEXTURES, BG_2_TEXTURES, BG_3_TEXTURES, BG_4_TEXTURES, BG_5_TEXTURES};
 

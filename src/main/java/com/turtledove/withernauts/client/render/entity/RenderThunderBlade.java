@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.render.entity;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.model.entity.ModelThunderBlade;
 import com.turtledove.withernauts.server.entity.Artes.EntityThunderBlade;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderThunderBlade extends RenderLiving<EntityThunderBlade>
 {
-    private static final ResourceLocation TB_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/thunder_blade.png");
+    private static final ResourceLocation TB_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/thunder_blade.png");
 
     public RenderThunderBlade(RenderManager mgr)
     {

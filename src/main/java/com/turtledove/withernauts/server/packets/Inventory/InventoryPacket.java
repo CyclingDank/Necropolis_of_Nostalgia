@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.packets.Inventory;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.gui.INecropolisItemHandler;
 import com.turtledove.withernauts.server.events.NecropolisCapabilities;
 import com.turtledove.withernauts.server.packets.Player.MessageHandler;
@@ -38,7 +38,7 @@ public class InventoryPacket implements IMessage
 
             //synchronize client/server mana data here, possibly other stats.
 
-            player.openGui(Necropolis_of_Nostalgia.MODID, 0,player.world, (int)player.posX,(int)player.posY,(int)player.posZ);
+            player.openGui(Withernauts.MODID, 0,player.world, (int)player.posX,(int)player.posY,(int)player.posZ);
             //pData.activateArte(message.slotIndex);
         }
     }

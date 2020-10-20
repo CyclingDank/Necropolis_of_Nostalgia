@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.render.entity;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.model.entity.ModelEruption;
 import com.turtledove.withernauts.server.entity.Artes.EntityEruption;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -9,10 +9,10 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderEruption extends RenderLiving<EntityEruption>
 {
-    private static final ResourceLocation E_1_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/eruption_1.png");
-    private static final ResourceLocation E_2_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/eruption_2.png");
-    private static final ResourceLocation E_3_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/eruption_3.png");
-    private static final ResourceLocation E_4_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/eruption_4.png");
+    private static final ResourceLocation E_1_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/eruption_1.png");
+    private static final ResourceLocation E_2_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/eruption_2.png");
+    private static final ResourceLocation E_3_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/eruption_3.png");
+    private static final ResourceLocation E_4_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/eruption_4.png");
 
 
     public RenderEruption(RenderManager mgr)

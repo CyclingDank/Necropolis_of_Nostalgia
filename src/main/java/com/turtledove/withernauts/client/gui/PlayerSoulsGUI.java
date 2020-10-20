@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.gui;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class PlayerSoulsGUI extends Gui
 {
-    private static final ResourceLocation TP_BAR = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/souls_display.png");
+    private static final ResourceLocation TP_BAR = new ResourceLocation(Withernauts.MODID,"textures/gui/souls_display.png");
 
     public PlayerSoulsGUI(Minecraft mc)
     {

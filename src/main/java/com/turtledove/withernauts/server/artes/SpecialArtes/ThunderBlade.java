@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.artes.SpecialArtes;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.artes.SpecialArte;
 import com.turtledove.withernauts.server.entity.Artes.EntityCast;
 import com.turtledove.withernauts.server.entity.Artes.EntityThunderBlade;
@@ -31,7 +31,7 @@ public class ThunderBlade extends SpecialArte
             this.spawnPlayerBook();
 
             this.player.playSound(NecropolisSounds.CASTING_80,1.0f,1.0f);
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SoundPacket(0,0.5f,1.0f),(EntityPlayerMP)this.player);
+            Withernauts.packetHandler.sendTo(new SoundPacket(0,0.5f,1.0f),(EntityPlayerMP)this.player);
         }
         else
         {

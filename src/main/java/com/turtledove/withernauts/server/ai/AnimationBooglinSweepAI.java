@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.ai;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.entity.NecropolisEntity;
 import com.turtledove.withernauts.server.entity.enemies.EntityBooglin;
 import com.turtledove.withernauts.server.packets.Player.SyncPlayer;
@@ -67,7 +67,7 @@ public class AnimationBooglinSweepAI  <T extends NecropolisEntity & IAnimatedEnt
                     EntityPlayer tPlayer = (EntityPlayer)targ;
                     if (entityInSlash(entity, targ) == true) {
                         boolean hitTest = targ.attackEntityFrom(DamageSource.causeMobDamage(this.entity), 15.0F);
-                        Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(0.0D, 0.7F, 0.),(EntityPlayerMP)tPlayer);
+                        Withernauts.packetHandler.sendTo(new SyncPlayer(0.0D, 0.7F, 0.),(EntityPlayerMP)tPlayer);
                         tPlayer.motionY = 0.7F;
                     }
                 }

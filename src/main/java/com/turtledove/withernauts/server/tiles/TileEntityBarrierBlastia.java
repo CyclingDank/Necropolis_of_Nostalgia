@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.tiles;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.entity.NecropolisEntity;
 import com.turtledove.withernauts.server.entity.NecropolisNPC;
 import com.turtledove.withernauts.server.entity.enemies.*;
@@ -96,11 +96,11 @@ public class TileEntityBarrierBlastia extends TileEntity implements ITickable
                 {
                     for (int i = -this.getRange(); i < this.getRange()+1; i++)
                     {
-                        Necropolis_of_Nostalgia.packetHandler.sendToAll(new PlayerParticlePacket(0, pos.getX() + this.getRange()+1, pos.getY(), pos.getZ() + i, 0.0D, -0.3D, 0.0D));
-                        Necropolis_of_Nostalgia.packetHandler.sendToAll(new PlayerParticlePacket(0, pos.getX() - this.getRange(), pos.getY(), pos.getZ() + i, 0.0D, -0.3D, 0.0D));
+                        Withernauts.packetHandler.sendToAll(new PlayerParticlePacket(0, pos.getX() + this.getRange()+1, pos.getY(), pos.getZ() + i, 0.0D, -0.3D, 0.0D));
+                        Withernauts.packetHandler.sendToAll(new PlayerParticlePacket(0, pos.getX() - this.getRange(), pos.getY(), pos.getZ() + i, 0.0D, -0.3D, 0.0D));
 
-                        Necropolis_of_Nostalgia.packetHandler.sendToAll(new PlayerParticlePacket(0, pos.getX() + i, pos.getY(), pos.getZ() + this.getRange()+1, 0.0D, -0.3D, 0.0D));
-                        Necropolis_of_Nostalgia.packetHandler.sendToAll(new PlayerParticlePacket(0, pos.getX() + i, pos.getY(), pos.getZ() - this.getRange(), 0.0D, -0.3D, 0.0D));
+                        Withernauts.packetHandler.sendToAll(new PlayerParticlePacket(0, pos.getX() + i, pos.getY(), pos.getZ() + this.getRange()+1, 0.0D, -0.3D, 0.0D));
+                        Withernauts.packetHandler.sendToAll(new PlayerParticlePacket(0, pos.getX() + i, pos.getY(), pos.getZ() - this.getRange(), 0.0D, -0.3D, 0.0D));
                     }
                 }
             }
@@ -326,7 +326,7 @@ public class TileEntityBarrierBlastia extends TileEntity implements ITickable
             playerIn.experienceLevel = (int)tLevel;
             playerIn.experience = (float)tLevel - (float)((int)tLevel);
 
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayerServerExperience((int)tLevel, (float)tLevel - (float)((int)tLevel)), (EntityPlayerMP)playerIn);
+            Withernauts.packetHandler.sendTo(new SyncPlayerServerExperience((int)tLevel, (float)tLevel - (float)((int)tLevel)), (EntityPlayerMP)playerIn);
 
             this.startInvasion();
             //this.levelUp();
@@ -336,7 +336,7 @@ public class TileEntityBarrierBlastia extends TileEntity implements ITickable
             this.soulCount+=xpTotal;
             playerIn.experienceLevel = 0;
             playerIn.experience = 0.0f;
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayerServerExperience(0, 0.0F), (EntityPlayerMP)playerIn);
+            Withernauts.packetHandler.sendTo(new SyncPlayerServerExperience(0, 0.0F), (EntityPlayerMP)playerIn);
 
         }
     }

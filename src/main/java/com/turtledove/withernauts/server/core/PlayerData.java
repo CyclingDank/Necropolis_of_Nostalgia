@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.core;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.common.ArteHandler;
 import com.turtledove.withernauts.common.ClassHandler;
 import com.turtledove.withernauts.common.quests.NecropolisQuestHandler;
@@ -233,7 +233,7 @@ public class PlayerData implements IPlayerData
                         if (get_stage_cooldown() == 1)
                         {
                             Minecraft.getMinecraft().world.playSound(player.posX, player.posY, player.posZ, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, SoundCategory.MASTER,0.8F, 1.4F, false);
-                            Necropolis_of_Nostalgia.packetHandler.sendToServer(new MessagePacket(getCurrentArteIndex(),0,0.0,0.0,0.0, get_current_stage()));
+                            Withernauts.packetHandler.sendToServer(new MessagePacket(getCurrentArteIndex(),0,0.0,0.0,0.0, get_current_stage()));
                         }
                         if (get_current_stage() == 0)
                         {
@@ -295,11 +295,11 @@ public class PlayerData implements IPlayerData
             if (this.syncCount == 1200)
             {
                 //Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayerStatsClientSide(this.playerMana),(EntityPlayerMP) this.player);
-                Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncArtesOnServer( primaryArtes, secondaryArtes, arteCount, this.current_class),(EntityPlayerMP) this.player);
+                Withernauts.packetHandler.sendTo(new SyncArtesOnServer( primaryArtes, secondaryArtes, arteCount, this.current_class),(EntityPlayerMP) this.player);
             }
             else if (this.syncCount == 1199)
             {
-                Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayerStatsServerSide(this.playerMana, this.getStatBoost()),(EntityPlayerMP) this.player);
+                Withernauts.packetHandler.sendTo(new SyncPlayerStatsServerSide(this.playerMana, this.getStatBoost()),(EntityPlayerMP) this.player);
                 syncQuests();
             }
             else if (this.syncCount == 0)
@@ -438,7 +438,7 @@ public class PlayerData implements IPlayerData
     public void incrementArteCount()
     {
         this.arteCount[bindedArtes[this.currentpArte + this.currentCol * 3]]++;
-        Necropolis_of_Nostalgia.packetHandler.sendToServer(new SyncArtesOnClient(this.bindedArtes, arteCount, -1));
+        Withernauts.packetHandler.sendToServer(new SyncArtesOnClient(this.bindedArtes, arteCount, -1));
     }
 
     public void decreasePlayerStamina(int stamina)
@@ -489,11 +489,11 @@ public class PlayerData implements IPlayerData
 
         if (!this.player.world.isRemote)
         {
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayerStatsServerSide(this.playerMana, this.getStatBoost()),(EntityPlayerMP) this.player);
+            Withernauts.packetHandler.sendTo(new SyncPlayerStatsServerSide(this.playerMana, this.getStatBoost()),(EntityPlayerMP) this.player);
         }
         else
         {
-            Necropolis_of_Nostalgia.packetHandler.sendToServer(new SyncPlayerStatsClientSide(this.playerMana));
+            Withernauts.packetHandler.sendToServer(new SyncPlayerStatsClientSide(this.playerMana));
         }
     }
 
@@ -509,11 +509,11 @@ public class PlayerData implements IPlayerData
         }
         if (!this.player.world.isRemote)
         {
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayerStatsServerSide(this.playerMana, this.getStatBoost()),(EntityPlayerMP) this.player);
+            Withernauts.packetHandler.sendTo(new SyncPlayerStatsServerSide(this.playerMana, this.getStatBoost()),(EntityPlayerMP) this.player);
         }
         else
         {
-            Necropolis_of_Nostalgia.packetHandler.sendToServer(new SyncPlayerStatsClientSide(this.playerMana));
+            Withernauts.packetHandler.sendToServer(new SyncPlayerStatsClientSide(this.playerMana));
         }
     }
     public void fillMana(float points)
@@ -710,14 +710,14 @@ public class PlayerData implements IPlayerData
     {
         if (!this.player.world.isRemote)
         {
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncQuestsServerSide(this.questStatus),(EntityPlayerMP) this.player);
+            Withernauts.packetHandler.sendTo(new SyncQuestsServerSide(this.questStatus),(EntityPlayerMP) this.player);
         }
     }
     public void syncQuest(int qID)
     {
         if (!this.player.world.isRemote)
         {
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncSingleQuestServerSide(qID, this.questStatus[qID]),(EntityPlayerMP) this.player);
+            Withernauts.packetHandler.sendTo(new SyncSingleQuestServerSide(qID, this.questStatus[qID]),(EntityPlayerMP) this.player);
         }
     }
 
@@ -820,11 +820,11 @@ public class PlayerData implements IPlayerData
     {
         if (this.player.world.isRemote)
         {
-            Necropolis_of_Nostalgia.packetHandler.sendToServer(new SyncPlayerMerchantClientSide(this.merchantPoints));
+            Withernauts.packetHandler.sendToServer(new SyncPlayerMerchantClientSide(this.merchantPoints));
         }
         else
         {
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayerMerchantServerSide(this.merchantPoints),(EntityPlayerMP) this.player);
+            Withernauts.packetHandler.sendTo(new SyncPlayerMerchantServerSide(this.merchantPoints),(EntityPlayerMP) this.player);
         }
     }
 
@@ -1046,7 +1046,7 @@ public class PlayerData implements IPlayerData
                 this.bindedArtes = this.secondaryArtes;
             }
         }
-        Necropolis_of_Nostalgia.packetHandler.sendToServer(new SyncArtesOnClient( this.bindedArtes, arteCount, -1));
+        Withernauts.packetHandler.sendToServer(new SyncArtesOnClient( this.bindedArtes, arteCount, -1));
     }
 
     public void updateStatsBoost()
@@ -1081,7 +1081,7 @@ public class PlayerData implements IPlayerData
         }
         if (!this.player.world.isRemote)
         {
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayerStatsServerSide(this.playerMana, this.getStatBoost()),(EntityPlayerMP) this.player);
+            Withernauts.packetHandler.sendTo(new SyncPlayerStatsServerSide(this.playerMana, this.getStatBoost()),(EntityPlayerMP) this.player);
         }
     }
     public int[] getStatBoost()

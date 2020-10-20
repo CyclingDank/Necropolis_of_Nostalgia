@@ -1,7 +1,7 @@
 package com.turtledove.withernauts.client.gui;
 
 import com.google.common.collect.Sets;
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 
 import com.turtledove.withernauts.common.food.FoodEffects;
 import com.turtledove.withernauts.server.artes.ArteBase;
@@ -80,13 +80,13 @@ public class NecropolisInventory extends GuiScreen
     private int touchUpX;
     private int touchUpY;
 
-    private static final ResourceLocation INVENTORY_BASIC = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/tab_items.png");
-    private static final ResourceLocation ITEM_DESC = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/tab_description.png");
-    private static final ResourceLocation EQUIPMENT_DESC = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/tab_equipment.png");
-    private static final ResourceLocation GENERAL = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/tab_general.png");
-    private static final ResourceLocation ARTES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/tab_artes.png");
-    private static final ResourceLocation ARTES_BUTTONS = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/arte_buttons.png");
-    private static final ResourceLocation INVENTORY_TABS = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/tabs.png");
+    private static final ResourceLocation INVENTORY_BASIC = new ResourceLocation(Withernauts.MODID,"textures/gui/tab_items.png");
+    private static final ResourceLocation ITEM_DESC = new ResourceLocation(Withernauts.MODID,"textures/gui/tab_description.png");
+    private static final ResourceLocation EQUIPMENT_DESC = new ResourceLocation(Withernauts.MODID,"textures/gui/tab_equipment.png");
+    private static final ResourceLocation GENERAL = new ResourceLocation(Withernauts.MODID,"textures/gui/tab_general.png");
+    private static final ResourceLocation ARTES = new ResourceLocation(Withernauts.MODID,"textures/gui/tab_artes.png");
+    private static final ResourceLocation ARTES_BUTTONS = new ResourceLocation(Withernauts.MODID,"textures/gui/arte_buttons.png");
+    private static final ResourceLocation INVENTORY_TABS = new ResourceLocation(Withernauts.MODID,"textures/gui/tabs.png");
 
     private final InventoryContainer inventory;
 
@@ -548,12 +548,12 @@ public class NecropolisInventory extends GuiScreen
             PlayerData data = (PlayerData) NecropolisPlayerData.get(Minecraft.getMinecraft().player);
             if (isPrimary)
             {
-                Necropolis_of_Nostalgia.packetHandler.sendToServer(new SyncArtesOnClient(data.primaryArtes, data.arteCount, 0));
+                Withernauts.packetHandler.sendToServer(new SyncArtesOnClient(data.primaryArtes, data.arteCount, 0));
                 //data.setBindedArtes(data.primaryArtes);
             }
             else
             {
-                Necropolis_of_Nostalgia.packetHandler.sendToServer(new SyncArtesOnClient(data.secondaryArtes, data.arteCount, 1));
+                Withernauts.packetHandler.sendToServer(new SyncArtesOnClient(data.secondaryArtes, data.arteCount, 1));
                 //data.setBindedArtes(data.secondaryArtes);
             }
         }

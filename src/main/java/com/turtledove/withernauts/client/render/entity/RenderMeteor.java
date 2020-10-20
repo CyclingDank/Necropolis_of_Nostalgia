@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.render.entity;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.model.entity.ModelMeteor;
 import com.turtledove.withernauts.server.entity.Artes.EntityMeteor;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderMeteor extends RenderLiving<EntityMeteor>
 {
-    private static final ResourceLocation M_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/meteor_storm.png");
+    private static final ResourceLocation M_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/meteor_storm.png");
 
 
     public RenderMeteor(RenderManager mgr)

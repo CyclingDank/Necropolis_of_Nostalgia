@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.gui;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.core.IPlayerData;
 import com.turtledove.withernauts.server.events.NecropolisCapabilities;
 import com.turtledove.withernauts.server.item.ItemHandler;
@@ -22,10 +22,10 @@ import java.io.IOException;
 
 public class WanderingMerchantGUI extends GuiScreen
 {
-    private static final ResourceLocation WM_GUI = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/wm_gui.png");
-    private static final ResourceLocation WM_CLOSED_GUI = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/wm_closed_gui.png");
+    private static final ResourceLocation WM_GUI = new ResourceLocation(Withernauts.MODID,"textures/gui/wm_gui.png");
+    private static final ResourceLocation WM_CLOSED_GUI = new ResourceLocation(Withernauts.MODID,"textures/gui/wm_closed_gui.png");
 
-    private static final ResourceLocation WM_BUTTONS = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/gui/wm_buttons.png");
+    private static final ResourceLocation WM_BUTTONS = new ResourceLocation(Withernauts.MODID,"textures/gui/wm_buttons.png");
 
     protected int guiLeft;
     protected int guiTop;
@@ -553,9 +553,9 @@ public class WanderingMerchantGUI extends GuiScreen
                 player.experience = (float)tLevel - (float)((int)tLevel);
 
 
-                Necropolis_of_Nostalgia.packetHandler.sendToServer(new WMSpawnItem(this.selectedTab * 5 + this.selectedItem, this.count));
+                Withernauts.packetHandler.sendToServer(new WMSpawnItem(this.selectedTab * 5 + this.selectedItem, this.count));
 
-                Necropolis_of_Nostalgia.packetHandler.sendToServer(new SyncPlayerExperience(player.experienceLevel, player.experience));
+                Withernauts.packetHandler.sendToServer(new SyncPlayerExperience(player.experienceLevel, player.experience));
 
                 this.count = 1;
                 iData.addMerchantPoints(itemCost / 2);

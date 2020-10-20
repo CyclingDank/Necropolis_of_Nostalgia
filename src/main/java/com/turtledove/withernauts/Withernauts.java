@@ -43,8 +43,8 @@ import com.turtledove.withernauts.server.entity.Spiral_Draco.EntitySpiral_Draco;
 
 import java.util.Random;
 
-@Mod(modid = Necropolis_of_Nostalgia.MODID, name = Necropolis_of_Nostalgia.NAME, version = Necropolis_of_Nostalgia.VERSION)
-public class Necropolis_of_Nostalgia {
+@Mod(modid = Withernauts.MODID, name = Withernauts.NAME, version = Withernauts.VERSION)
+public class Withernauts {
     public static DamageSource dracoFire;
     public static DamageSource artes;
     public static DamageSource physical_artes;
@@ -52,17 +52,14 @@ public class Necropolis_of_Nostalgia {
     public static DamageSource melee;
 
     public static final String MODID = "turtdance";
-    public static final String NAME = "Necropolis of Nostalgia";
+    public static final String NAME = "Withernauts";
     public static final String VERSION = "1.0";
-
-    private static Logger logger;
-    private static int nextEntityId;
 
     public static PacketHandler packetHandler;
     public static Logger LOG;
 
     private static final class Holder {
-        private static final Necropolis_of_Nostalgia INSTANCE = new Necropolis_of_Nostalgia();
+        private static final Withernauts INSTANCE = new Withernauts();
     }
 
 
@@ -120,7 +117,7 @@ public class Necropolis_of_Nostalgia {
 
         CapabilityManager.INSTANCE.register(IPlayerData.class, new IPlayerDataStorage(), PlayerData::new);
         CapabilityManager.INSTANCE.register(INecropolisItemHandler.class, new IGuiStorage(), NecropolisItemHandler::new);
-        NetworkRegistry.INSTANCE.registerGuiHandler(Necropolis_of_Nostalgia.MODID, new NecropolisGuiHandler());
+        NetworkRegistry.INSTANCE.registerGuiHandler(Withernauts.MODID, new NecropolisGuiHandler());
 
         ClientKeyHandler.initKeybinds();
         NecropolisBiomes.registerBiomes();
@@ -175,13 +172,13 @@ public class Necropolis_of_Nostalgia {
                 return new TextComponentString(entityLivingBaseIn.getDisplayName().getFormattedText() + " ").appendSibling(new TextComponentTranslation(s1, entityLivingBaseIn.getDisplayName()));
             }
         }.setDamageBypassesArmor();
-        Necropolis_of_Nostalgia.packetHandler = new PacketHandler(Necropolis_of_Nostalgia.MODID);
-        Necropolis_of_Nostalgia.packetHandler.registerPackets();
+        Withernauts.packetHandler = new PacketHandler(Withernauts.MODID);
+        Withernauts.packetHandler.registerPackets();
 
     }
 
     @Mod.InstanceFactory
-    public static Necropolis_of_Nostalgia instance() {
+    public static Withernauts instance() {
         return Holder.INSTANCE;
     }
 }

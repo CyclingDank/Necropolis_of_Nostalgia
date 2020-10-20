@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.render.entity;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.model.entity.ModelBeast;
 import com.turtledove.withernauts.server.entity.Artes.EntityBeast;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBeast extends RenderLiving<EntityBeast>
 {
-    private static final ResourceLocation BEAST_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/beast_texture.png");
+    private static final ResourceLocation BEAST_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/beast_texture.png");
 
     public RenderBeast(RenderManager mgr)
     {

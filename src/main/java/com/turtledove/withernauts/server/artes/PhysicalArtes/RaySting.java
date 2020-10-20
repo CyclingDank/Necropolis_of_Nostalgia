@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.artes.PhysicalArtes;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.artes.PhysicalArte;
 import com.turtledove.withernauts.server.packets.Player.SyncPlayer;
 import net.minecraft.entity.Entity;
@@ -36,7 +36,7 @@ public class RaySting extends PhysicalArte
                         entity.attackEntityFrom(DamageSource.causeMobDamage(player),1.0F);
                         if (entity instanceof EntityPlayer)
                         {
-                            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(0.0D, 0.5D, 0.0D),(EntityPlayerMP)entity);
+                            Withernauts.packetHandler.sendTo(new SyncPlayer(0.0D, 0.5D, 0.0D),(EntityPlayerMP)entity);
                         }
                         else
                         {
@@ -52,7 +52,7 @@ public class RaySting extends PhysicalArte
                         Vec3d forDir = player.getForward();
                         if (entity instanceof EntityPlayer)
                         {
-                            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(forDir.x, forDir.y, forDir.z),(EntityPlayerMP)entity);
+                            Withernauts.packetHandler.sendTo(new SyncPlayer(forDir.x, forDir.y, forDir.z),(EntityPlayerMP)entity);
                         }
                         else
                         {

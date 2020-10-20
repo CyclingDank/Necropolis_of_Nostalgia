@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.artes.PhysicalArtes;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.artes.PhysicalArte;
 import com.turtledove.withernauts.server.core.NecropolisPlayerData;
 import com.turtledove.withernauts.server.core.PlayerData;
@@ -32,6 +32,6 @@ public class DemonFang extends PhysicalArte
         this.player.world.spawnEntity(cast);
 
         this.player.playSound(NecropolisSounds.DEMON_FANG,1.0f,1.0f);
-        Necropolis_of_Nostalgia.packetHandler.sendTo(new SoundPacket(2,1.0f,1.0f),(EntityPlayerMP)this.player);
+        Withernauts.packetHandler.sendTo(new SoundPacket(2,1.0f,1.0f),(EntityPlayerMP)this.player);
     }
 }

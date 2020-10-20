@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.entity.Artes;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.entity.EntityCasted;
 import com.turtledove.withernauts.server.entity.NecropolisEntity;
 import com.turtledove.withernauts.server.packets.Player.SyncPlayer;
@@ -140,7 +140,7 @@ public class EntityOF extends EntityCasted
                                     entity.motionY = 0.4f;
                                     if (entity instanceof EntityPlayer)
                                     {
-                                        Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(0.0, 0.4, 0.0), (EntityPlayerMP)entity);
+                                        Withernauts.packetHandler.sendTo(new SyncPlayer(0.0, 0.4, 0.0), (EntityPlayerMP)entity);
                                     }
                                 }
                             }
@@ -156,7 +156,7 @@ public class EntityOF extends EntityCasted
                                 entity.motionY = 0.4f;
                                 if (entity instanceof EntityPlayer)
                                 {
-                                    Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(0.0, 0.4, 0.0), (EntityPlayerMP)entity);
+                                    Withernauts.packetHandler.sendTo(new SyncPlayer(0.0, 0.4, 0.0), (EntityPlayerMP)entity);
                                 }
                             }
                         }

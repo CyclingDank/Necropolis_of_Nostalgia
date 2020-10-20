@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.server.artes.PhysicalArtes;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.server.artes.PhysicalArte;
 import com.turtledove.withernauts.server.packets.Player.SyncPlayer;
 import net.minecraft.entity.Entity;
@@ -40,7 +40,7 @@ public class Cavalry  extends PhysicalArte
         if (arte_stage == 0)
         {
             Vec3d forDir = player.getForward();
-            Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(forDir.x, 0.0D, forDir.z),(EntityPlayerMP)this.player);
+            Withernauts.packetHandler.sendTo(new SyncPlayer(forDir.x, 0.0D, forDir.z),(EntityPlayerMP)this.player);
         }
     }
     public boolean entityInSlash(EntityPlayer source, Entity target)

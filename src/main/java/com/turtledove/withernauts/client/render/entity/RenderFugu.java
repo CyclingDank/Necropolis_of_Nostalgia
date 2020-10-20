@@ -1,6 +1,6 @@
 package com.turtledove.withernauts.client.render.entity;
 
-import com.turtledove.withernauts.Necropolis_of_Nostalgia;
+import com.turtledove.withernauts.Withernauts;
 import com.turtledove.withernauts.client.model.entity.ModelFugu;
 import com.turtledove.withernauts.server.entity.enemies.EntityFugu;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderFugu extends RenderLiving<EntityFugu>
 {
-    private static final ResourceLocation FUGU_TEXTURES = new ResourceLocation(Necropolis_of_Nostalgia.MODID,"textures/entity/fugu.png");
+    private static final ResourceLocation FUGU_TEXTURES = new ResourceLocation(Withernauts.MODID,"textures/entity/fugu.png");
 
     public RenderFugu(RenderManager mgr)
     {
