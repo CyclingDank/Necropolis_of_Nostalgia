@@ -1,34 +1,26 @@
 package com.turtledove.necropolisofnostalgia.server.entity.enemies;
 
 import com.google.common.base.Predicates;
-import com.turtledove.necropolisofnostalgia.Necropolis_of_Nostalgia;
 import com.turtledove.necropolisofnostalgia.server.ai.*;
-import com.turtledove.necropolisofnostalgia.server.entity.EntityCasted;
-import com.turtledove.necropolisofnostalgia.server.entity.EntityNecropolisFireCharge;
 import com.turtledove.necropolisofnostalgia.server.entity.NecropolisEntity;
-import com.turtledove.necropolisofnostalgia.server.packets.Player.SyncPlayer;
 import com.turtledove.necropolisofnostalgia.server.sounds.NecropolisSounds;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.*;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
 public class EntityAxeBeak extends NecropolisEntity
 {
@@ -103,7 +95,6 @@ public class EntityAxeBeak extends NecropolisEntity
         this.tasks.addTask(1, new AnimationGenericAI<>(this, HURT_ANIMATION));
         this.tasks.addTask(1, new AnimationABEatAI<>(this, EAT_ANIMATION));
         this.tasks.addTask(2, new EntityAIFaceOff(this,0.375D, this.distToPlayer));
-        this.tasks.addTask(6, new EntityAIOccupyVillage(this, 0.1875D));
         this.tasks.addTask(6, new EntityAIWanderAvoidWater(this, 0.1875D));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 2.0F));
         this.tasks.addTask(8, new EntityAILookIdle(this));

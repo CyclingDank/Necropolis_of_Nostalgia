@@ -126,7 +126,6 @@ public class EntityBooglin extends NecropolisEntity
 
 
         this.tasks.addTask(2, new EntityAIFaceOff(this,0.3D, 3));
-        this.tasks.addTask(6, new EntityAIOccupyVillage(this, 0.1875D));
         this.tasks.addTask(6, new EntityAIWanderAvoidWater(this, 0.1875D));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 2.0F));
         this.tasks.addTask(8, new EntityAILookIdle(this));
@@ -327,7 +326,7 @@ public class EntityBooglin extends NecropolisEntity
         {
             if (getAnimation() == BLOCK_40_ANIMATION || getAnimation() == BLOCK_80_ANIMATION)
             {
-                this.playSound(NecropolisSounds.GUARD_HIT, 1.0F, 1.0F);
+                this.playSound(SoundEvents.BLOCK_ANVIL_LAND, 0.5F, 1.4F);
                 return false;
             }
             if (getAnimation() == NO_ANIMATION)

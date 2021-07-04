@@ -149,25 +149,6 @@ public class ModelVampireBat extends AdvancedModelBase {
             animator.rotate(this.vb_wing_2_r, 0.0F, -2.0944F, 0.0F);
             animator.endKeyframe();
         }
-        else if (birb.getAnimation() == EntityVampireBat.ANNOY_ANIMATION)
-        {
-            animator.setAnimation(EntityVampireBat.ANNOY_ANIMATION);
-            setRotationAngles(f, f1, f2, f3, f4, f5, birb);
-            animator.startKeyframe(0);
-            animator.rotate(this.vb_torso, 0F, 0.0F, 0.0F);
-            animator.endKeyframe();
-            animator.startKeyframe(4);
-            animator.rotate(this.vb_torso, -0.872665F, 0.0F, 0.0F);
-            animator.rotate(this.vb_head, 0.261799F, 0.0F, 0.0F);
-            animator.endKeyframe();
-            animator.startKeyframe(10);
-            animator.rotate(this.vb_torso, -0.872665F, 0.0F, 0.0F);
-            animator.rotate(this.vb_head, 0.261799F, 0.0F, 0.0F);
-            animator.rotate(this.vb_mouth, 0.174533F, 0.0F, 0.0F);
-            animator.endKeyframe();
-            animator.setStaticKeyframe(24);
-            animator.resetKeyframe(2);
-        }
         else if (birb.getAnimation() == EntityVampireBat.HURT_ANIMATION) {
             animator.setAnimation(EntityVampireBat.HURT_ANIMATION);
             setRotationAngles(f, f1, f2, f3, f4, f5, birb);

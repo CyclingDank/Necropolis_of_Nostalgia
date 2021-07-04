@@ -1,13 +1,10 @@
 package com.turtledove.necropolisofnostalgia.server.ai;
 
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityBedrockGolem;
 import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityFugu;
 import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityNecropolisSkeleton;
-import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 
 import com.turtledove.necropolisofnostalgia.server.entity.NecropolisEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.pathfinding.Path;
@@ -58,8 +55,8 @@ public class EntityAIFaceOff extends EntityAIBase
     {
         Entity entitybase = this.entity.targetofmyrevenge;
         double dist = this.entity.getDistance(entitybase);
-        if (this.entity.getAnimation() != EntityNecropolisSkeleton.SWING_ANIMATION && this.entity.getAnimation() != EntityBedrockGolem.GROUND_ANIMATION && this.entity.getAnimation() != EntityBedrockGolem.STOMP_ANIMATION
-        && this.entity.getAnimation() != EntityFugu.LEAP_ANIMATION && this.entity.getAnimation() != EntityFugu.LEAP_FLAIL_ANIMATION && this.entity.getAnimation() != EntityFugu.TAIL_ANIMATION)
+        if (this.entity.getAnimation() != EntityNecropolisSkeleton.SWING_ANIMATION && this.entity.getAnimation() != EntityFugu.LEAP_ANIMATION
+                && this.entity.getAnimation() != EntityFugu.LEAP_FLAIL_ANIMATION && this.entity.getAnimation() != EntityFugu.TAIL_ANIMATION)
         {
             if (dist > this.stopDistance)
             {

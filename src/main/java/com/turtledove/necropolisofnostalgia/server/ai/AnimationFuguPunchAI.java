@@ -2,9 +2,7 @@ package com.turtledove.necropolisofnostalgia.server.ai;
 
 import com.turtledove.necropolisofnostalgia.Necropolis_of_Nostalgia;
 import com.turtledove.necropolisofnostalgia.server.entity.NecropolisEntity;
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityBedrockGolem;
 import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityFugu;
-import com.turtledove.necropolisofnostalgia.server.packets.Player.SyncPlayer;
 import com.turtledove.necropolisofnostalgia.server.sounds.NecropolisSounds;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
@@ -72,7 +70,6 @@ public class AnimationFuguPunchAI<T extends NecropolisEntity & IAnimatedEntity> 
                             {
                                 double dX = targ.posX - this.entity.posX;
                                 double dZ = targ.posZ - this.entity.posZ;
-                                Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(dX / 4.0D, 0.0F, dZ / 4.0D),(EntityPlayerMP)targ);
                                 targ.motionX = dX / 4.0D;
                                 targ.motionZ = dZ / 4.0D;
                                 targ.motionY = 0.0F;

@@ -1,16 +1,12 @@
 package com.turtledove.necropolisofnostalgia.server.ai;
 
-import com.turtledove.necropolisofnostalgia.Necropolis_of_Nostalgia;
 import com.turtledove.necropolisofnostalgia.server.entity.NecropolisEntity;
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityBooglin;
 import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityFugu;
-import com.turtledove.necropolisofnostalgia.server.packets.Player.SyncPlayer;
 import com.turtledove.necropolisofnostalgia.server.sounds.NecropolisSounds;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;

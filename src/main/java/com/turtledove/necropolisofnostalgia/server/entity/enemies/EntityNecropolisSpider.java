@@ -11,11 +11,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
@@ -32,13 +28,10 @@ import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class EntityNecropolisSpider extends NecropolisEntity
 {
@@ -145,7 +138,6 @@ public class EntityNecropolisSpider extends NecropolisEntity
         this.tasks.addTask(1, new AnimationSpiderRearJab<>(this, REAR_JAB_ANIMATION));
         this.tasks.addTask(1, new AnimationSpiderRampage<>(this, RAMPAGE_ANIMATION));
         this.tasks.addTask(2, new EntityAISpiderFaceOff(this,0.375D, 4));
-        this.tasks.addTask(6, new EntityAIOccupyVillage(this, 0.1875D));
     }
     @Override
     public void onUpdate() {

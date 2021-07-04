@@ -1,6 +1,0 @@
-{
-    "variants": {
-		"isflowered=0": { "model": "turtdance:repitifleur_flowered"},
-        "isflowered=1": { "model": "turtdance:repitifleur_deflowered" }
-    }
-}

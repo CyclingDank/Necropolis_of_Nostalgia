@@ -1,9 +1,0 @@
-{
-	"variants": {
-		"age=0": { "model": "turtdance:rice_0" },
-		"age=1": { "model": "turtdance:rice_1" },
-		"age=2": { "model": "turtdance:rice_2" },
-		"age=3": { "model": "turtdance:rice_3" },
-		"age=4": { "model": "turtdance:rice_4" }
-	}
-}

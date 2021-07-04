@@ -2,10 +2,6 @@ package com.turtledove.necropolisofnostalgia.server.entity.enemies;
 
 import com.google.common.base.Predicates;
 import com.turtledove.necropolisofnostalgia.server.ai.*;
-import com.turtledove.necropolisofnostalgia.server.entity.Artes.EntityBeast;
-import com.turtledove.necropolisofnostalgia.server.entity.Artes.EntityDemonFang;
-import com.turtledove.necropolisofnostalgia.server.entity.EntityCasted;
-import com.turtledove.necropolisofnostalgia.server.entity.EntityNecropolisFireCharge;
 import com.turtledove.necropolisofnostalgia.server.entity.NecropolisEntity;
 
 import com.turtledove.necropolisofnostalgia.server.sounds.NecropolisSounds;
@@ -26,7 +22,6 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
 
@@ -127,7 +122,6 @@ public class EntityNecropolisSkeleton extends NecropolisEntity
         this.tasks.addTask(2, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIFaceOff(this,0.1875D, distToPlayer));
         this.tasks.addTask(3, new EntityAIWanderAvoidWater(this, 0.1875D));
-        this.tasks.addTask(6, new EntityAIOccupyVillage(this, 0.1875D));
     }
 
 
@@ -245,7 +239,7 @@ public class EntityNecropolisSkeleton extends NecropolisEntity
                 return false;
             if (getAnimation() == BLOCK_40_ANIMATION || getAnimation() == BLOCK_80_ANIMATION || getAnimation() == BLOCK_160_ANIMATION)
             {
-                this.playSound(NecropolisSounds.GUARD_HIT, 1.0F, 1.0F);
+                this.playSound(SoundEvents.BLOCK_ANVIL_LAND, 0.5F, 1.4F);
                 return false;
             }
             else if (getAnimation() == NO_ANIMATION)

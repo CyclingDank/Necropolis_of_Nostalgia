@@ -3,8 +3,6 @@ package com.turtledove.necropolisofnostalgia.server.ai;
 import com.turtledove.necropolisofnostalgia.Necropolis_of_Nostalgia;
 import com.turtledove.necropolisofnostalgia.server.entity.NecropolisEntity;
 import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityBooglin;
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityCultSorceress;
-import com.turtledove.necropolisofnostalgia.server.packets.Player.SyncPlayer;
 import com.turtledove.necropolisofnostalgia.server.sounds.NecropolisSounds;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
@@ -68,7 +66,6 @@ public class AnimationBooglinSweepAI  <T extends NecropolisEntity & IAnimatedEnt
                     EntityPlayer tPlayer = (EntityPlayer)targ;
                     if (entityInSlash(entity, targ) == true) {
                         boolean hitTest = targ.attackEntityFrom(DamageSource.causeMobDamage(this.entity), 15.0F);
-                        Necropolis_of_Nostalgia.packetHandler.sendTo(new SyncPlayer(0.0D, 0.7F, 0.),(EntityPlayerMP)tPlayer);
                         tPlayer.motionY = 0.7F;
                     }
                 }

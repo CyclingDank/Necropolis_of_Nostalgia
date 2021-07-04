@@ -32,10 +32,9 @@ import javax.annotation.Nullable;
 public class EntityVampireBat extends NecropolisEntity
 {
     public static final Animation DIVE_ANIMATION = Animation.create(20);
-    public static final Animation ANNOY_ANIMATION = Animation.create(40);
     public static final Animation HURT_ANIMATION = Animation.create(15);
 
-    private static final Animation[] ANIMATIONS = {DIVE_ANIMATION, ANNOY_ANIMATION, HURT_ANIMATION};
+    private static final Animation[] ANIMATIONS = {DIVE_ANIMATION, HURT_ANIMATION};
 
     protected float maxDistanceForPlayer;
     private double tSpeed;
@@ -102,7 +101,6 @@ public class EntityVampireBat extends NecropolisEntity
     {
         this.tSpeed = 0.375D * 3D;
         this.tasks.addTask(1, new AnimationVBDiveAI<>(this, DIVE_ANIMATION));
-        this.tasks.addTask(1, new AnimationVBAnnoyAI<>(this, ANNOY_ANIMATION));
         this.tasks.addTask(1, new AnimationGenericAI<>(this, HURT_ANIMATION));
 
         this.tasks.addTask(2, new EntityAIBatFly(this,this.tSpeed, 5));
@@ -154,17 +152,8 @@ public class EntityVampireBat extends NecropolisEntity
                         {
                             if (this.diveCooldown > 10)
                             {
-                                double tRand = Math.random();
-                                if (tRand < 0.8)
-                                {
-                                    AnimationHandler.INSTANCE.sendAnimationMessage(this, DIVE_ANIMATION);
-                                    this.diveCooldown = 0;
-                                }
-                                else
-                                {
-                                    AnimationHandler.INSTANCE.sendAnimationMessage(this, ANNOY_ANIMATION);
-                                    this.diveCooldown = -10;
-                                }
+                                AnimationHandler.INSTANCE.sendAnimationMessage(this, DIVE_ANIMATION);
+                                this.diveCooldown = 0;
                             }
                             this.diveCooldown++;
                         }

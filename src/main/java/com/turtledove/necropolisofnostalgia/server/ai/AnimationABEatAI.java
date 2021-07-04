@@ -4,15 +4,8 @@ import com.turtledove.necropolisofnostalgia.server.entity.NecropolisEntity;
 import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityAxeBeak;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
-
-import java.util.List;
 
 public class AnimationABEatAI  <T extends NecropolisEntity & IAnimatedEntity> extends AnimationAI<T> {
     public AnimationABEatAI(T entity, Animation animation)

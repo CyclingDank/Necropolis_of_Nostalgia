@@ -54,7 +54,7 @@ public class EntityAIBatFly  extends EntityAIBase {
     {
         Entity entitybase = this.entity.targetofmyrevenge;
         double dist = this.entity.getDistance(entitybase);
-        if (this.entity.getAnimation() != EntityVampireBat.ANNOY_ANIMATION && this.entity.getAnimation() != EntityVampireBat.HURT_ANIMATION)
+        if (this.entity.getAnimation() != EntityVampireBat.HURT_ANIMATION)
         {
             if (isBlockInFront())
                 this.entity.motionY -= 0.4F;

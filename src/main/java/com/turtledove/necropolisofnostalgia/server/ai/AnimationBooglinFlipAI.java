@@ -2,7 +2,6 @@ package com.turtledove.necropolisofnostalgia.server.ai;
 
 import com.turtledove.necropolisofnostalgia.server.entity.NecropolisEntity;
 import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityBooglin;
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityCultSorceress;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.minecraft.init.SoundEvents;

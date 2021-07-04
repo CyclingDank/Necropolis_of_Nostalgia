@@ -1,11 +1,9 @@
 package com.turtledove.necropolisofnostalgia.server.packets.Player;
 
-import com.turtledove.necropolisofnostalgia.server.core.NecropolisPlayerData;
-import com.turtledove.necropolisofnostalgia.server.core.PlayerData;
+import com.turtledove.necropolisofnostalgia.server.packets.MessageHandler;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 
 public class PlayerParticlePacket  implements IMessage
