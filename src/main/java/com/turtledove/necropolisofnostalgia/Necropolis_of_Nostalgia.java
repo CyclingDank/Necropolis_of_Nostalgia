@@ -82,12 +82,6 @@ public class Necropolis_of_Nostalgia {
         }
     }
 
-    @Mod.EventHandler
-    public void serverStarted(FMLServerStartedEvent event) {
-        GameRules gr = FMLCommonHandler.instance().getMinecraftServerInstance().worlds[0].getGameRules();
-        gr.setOrCreateGameRule("keepInventory", Boolean.toString(Boolean.TRUE));
-    }
-
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
