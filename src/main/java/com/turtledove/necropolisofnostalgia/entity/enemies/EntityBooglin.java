@@ -346,13 +346,10 @@ public class EntityBooglin extends NecropolisEntity
     public void onDeath(DamageSource cause)
     {
         super.onDeath(cause);
-        if ((cause.getDamageType() == "melee") || cause.getDamageType() == "arte" || cause.getDamageType() == "physical_artes")
+        if (!this.world.isRemote)
         {
-            if (!this.world.isRemote)
-            {
-                this.dropExperience(8);
-                this.entityDropItem(new ItemStack(Items.IRON_INGOT, 8, 0), 0.0F);
-            }
+            this.dropExperience(8);
+            this.entityDropItem(new ItemStack(Items.IRON_INGOT, 8, 0), 0.0F);
         }
     }
 

@@ -213,13 +213,10 @@ public class EntityFugu  extends NecropolisEntity
     public void onDeath(DamageSource cause)
     {
         super.onDeath(cause);
-        if ((cause.getDamageType() == "melee") || cause.getDamageType() == "arte" || cause.getDamageType() == "physical_artes")
+        if (!this.world.isRemote)
         {
-            if (!this.world.isRemote)
-            {
-                this.dropExperience(30);
-                this.entityDropItem(new ItemStack(Items.FISH, 4, 0), 0.0F);
-            }
+            this.dropExperience(30);
+            this.entityDropItem(new ItemStack(Items.FISH, 4, 0), 0.0F);
         }
     }
     protected void playStepSound(BlockPos pos, Block blockIn)
