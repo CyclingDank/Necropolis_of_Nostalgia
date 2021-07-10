@@ -52,16 +52,16 @@ public class WithernautsConfigs
         this.vampireBatDamage = config.getFloat("Vampire Bat Damage", "all", (float)this.vampireBatDamage, 1, 1000, "");
         this.vampireBatSpawnWeight = config.getInt("Vampire Bat Spawn Weight", "all", this.vampireBatSpawnWeight, 1, 100, "");
 
-        this.spiderMaxHealth = config.getFloat("Spider Max Health", "all", (float)this.spiderMaxHealth, 1, 1000, "");
-        this.spiderDamage = config.getFloat("Spider Damage", "all", (float)this.spiderDamage, 1, 1000, "");
-        this.spiderSpawnWeight = config.getInt("Spider Spawn Weight", "all", this.spiderSpawnWeight, 1, 100, "");
+        this.spiderMaxHealth = config.getFloat("Patriarch Spider Max Health", "all", (float)this.spiderMaxHealth, 1, 1000, "");
+        this.spiderDamage = config.getFloat("Patriarch Spider Damage", "all", (float)this.spiderDamage, 1, 1000, "");
+        this.spiderSpawnWeight = config.getInt("Patriarch Spider Spawn Weight", "all", this.spiderSpawnWeight, 1, 100, "");
         
-        this.babySpiderMaxHealth = config.getFloat("Baby Spider Max Health", "all", (float)this.babySpiderMaxHealth, 1, 1000, "");
-        this.babySpiderDamage = config.getFloat("Baby Spider Damage", "all", (float)this.babySpiderDamage, 1, 1000, "");
+        this.babySpiderMaxHealth = config.getFloat("Brood Spider Max Health", "all", (float)this.babySpiderMaxHealth, 1, 1000, "");
+        this.babySpiderDamage = config.getFloat("Brood Spider Damage", "all", (float)this.babySpiderDamage, 1, 1000, "");
         
-        this.fuguMaxHealth = config.getFloat("Fugu Max Health", "all", (float)this.fuguMaxHealth, 1, 1000, "");
-        this.fuguDamage = config.getFloat("Fugu Damage", "all", (float)this.fuguDamage, 1, 1000, "");
-        this.fuguSpawnWeight = config.getInt("Fugu Spawn Weight", "all", this.fuguSpawnWeight, 1, 100, "");
+        this.fuguMaxHealth = config.getFloat("Glob Max Health", "all", (float)this.fuguMaxHealth, 1, 1000, "");
+        this.fuguDamage = config.getFloat("Glob Damage", "all", (float)this.fuguDamage, 1, 1000, "");
+        this.fuguSpawnWeight = config.getInt("Glob Spawn Weight", "all", this.fuguSpawnWeight, 1, 100, "");
         
         this.booglinMaxHealth = config.getFloat("Booglin Max Health", "all", (float)this.booglinMaxHealth, 1, 1000, "");
         this.booglinDamage = config.getFloat("Booglin Damage", "all", (float)this.booglinDamage, 1, 1000, "");
