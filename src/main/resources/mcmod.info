@@ -2,12 +2,12 @@
     {
         "modid": "turtdance",
         "name": "Zoology of Withernauts",
-        "description": "A monster-only version of Withernauts",
+        "description": "A monster-only version of Withernauts for modpack makers",
         "version": "${version}",
         "mcversion": "1.12.2",
         "authorList": [
-            "Turtledove"
+            "Turtledove", "DanIV"
         ],
-        "credits": ""
+        "credits": "Special thanks to Bob Mowzie"
     }
 ]

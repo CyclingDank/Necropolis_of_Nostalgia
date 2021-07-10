@@ -14,8 +14,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.registry.*;
-import scala.actors.threadpool.Arrays;
 
+import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 

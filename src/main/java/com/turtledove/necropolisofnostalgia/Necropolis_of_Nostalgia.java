@@ -21,7 +21,9 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 import java.io.File;
 
-@Mod(modid = Necropolis_of_Nostalgia.MODID, name = Necropolis_of_Nostalgia.NAME, version = Necropolis_of_Nostalgia.VERSION, guiFactory = "com.turtledove.necropolisofnostalgia.gui.WithernautsGuiFactory")
+@Mod(modid = Necropolis_of_Nostalgia.MODID, name = Necropolis_of_Nostalgia.NAME, version = Necropolis_of_Nostalgia.VERSION, guiFactory = "com.turtledove.necropolisofnostalgia.gui.WithernautsGuiFactory"
+        , dependencies = "required-after:llibrary@[" + "1.7.9" + ",)"
+)
 public class Necropolis_of_Nostalgia {
     public static final String MODID = "turtdance";
     public static final String NAME = "Withernauts Zoology";

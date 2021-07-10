@@ -2,6 +2,7 @@ package com.turtledove.necropolisofnostalgia.ai;
 
 import com.turtledove.necropolisofnostalgia.entity.NecropolisEntity;
 import com.turtledove.necropolisofnostalgia.entity.enemies.EntityAxeBeak;
+import com.turtledove.necropolisofnostalgia.sound.NecropolisSounds;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.minecraft.init.Items;
@@ -28,20 +29,30 @@ public class AnimationABEatAI  <T extends NecropolisEntity & IAnimatedEntity> ex
         }
         else if (this.entity.getAnimationTick() > 15 && this.entity.getAnimationTick() < 80)
         {
-            if (this.entity.getAnimationTick() % 2 == 0)
+            if (this.entity.getAnimationTick() % 20 == 0)
             {
-                this.entity.playSound(SoundEvents.BLOCK_NOTE_SNARE, 0.7F, 0.4F);
+                this.entity.playSound(NecropolisSounds.AB_GRUNT, 0.7F, 0.4F);
             }
         }
         else if (this.entity.getAnimationTick() == 99)
         {
-            if (Math.random() < 0.80)
-                ((EntityAxeBeak)entity).setAggroLevel(true);
-            else
+            if (Math.random() < 0.05)
+            {
+                this.entity.playSound(SoundEvents.BLOCK_NOTE_CHIME, 1.0F, 2.5F);
+                this.entity.dropItem(Items.DIAMOND, 1);
+            }
+            else if (Math.random() < 0.1)
             {
                 this.entity.playSound(SoundEvents.BLOCK_NOTE_CHIME, 1.0F, 1.5F);
+                this.entity.dropItem(Items.IRON_NUGGET, 1);
+            }
+            else if (Math.random() < 0.3)
+            {
+                this.entity.playSound(SoundEvents.BLOCK_NOTE_CHIME, 1.0F, 0.6F);
                 this.entity.dropItem(Items.WHEAT_SEEDS, 2);
             }
+            else
+                ((EntityAxeBeak)entity).setAggroLevel(true);
         }
     }
     @Override
