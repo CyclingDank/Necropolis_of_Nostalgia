@@ -2,7 +2,7 @@ package com.turtledove.necropolisofnostalgia.client.render.entity;
 
 import com.turtledove.necropolisofnostalgia.Necropolis_of_Nostalgia;
 import com.turtledove.necropolisofnostalgia.client.model.entity.ModelNecropolisSkeleton;
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityNecropolisSkeleton;
+import com.turtledove.necropolisofnostalgia.entity.enemies.EntityNecropolisSkeleton;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;

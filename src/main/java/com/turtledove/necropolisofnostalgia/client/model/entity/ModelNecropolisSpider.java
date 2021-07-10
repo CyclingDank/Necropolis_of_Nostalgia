@@ -1,12 +1,9 @@
 package com.turtledove.necropolisofnostalgia.client.model.entity;
 
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityAxeBeak;
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityNecropolisSkeleton;
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityNecropolisSpider;
+import com.turtledove.necropolisofnostalgia.entity.enemies.EntityNecropolisSpider;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;

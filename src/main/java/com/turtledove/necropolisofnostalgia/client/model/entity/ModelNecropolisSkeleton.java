@@ -1,6 +1,6 @@
 package com.turtledove.necropolisofnostalgia.client.model.entity;
 
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityNecropolisSkeleton;
+import com.turtledove.necropolisofnostalgia.entity.enemies.EntityNecropolisSkeleton;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;

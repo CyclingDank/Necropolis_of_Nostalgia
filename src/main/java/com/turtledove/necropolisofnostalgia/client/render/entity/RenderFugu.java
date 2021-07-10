@@ -1,10 +1,8 @@
 package com.turtledove.necropolisofnostalgia.client.render.entity;
 
 import com.turtledove.necropolisofnostalgia.Necropolis_of_Nostalgia;
-import com.turtledove.necropolisofnostalgia.client.model.entity.ModelBooglin;
 import com.turtledove.necropolisofnostalgia.client.model.entity.ModelFugu;
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityBooglin;
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityFugu;
+import com.turtledove.necropolisofnostalgia.entity.enemies.EntityFugu;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;

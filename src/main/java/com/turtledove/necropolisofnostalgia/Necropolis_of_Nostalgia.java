@@ -1,12 +1,14 @@
 package com.turtledove.necropolisofnostalgia;
 
 import com.turtledove.necropolisofnostalgia.client.render.entity.*;
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.*;
-import com.turtledove.necropolisofnostalgia.server.packets.PacketHandler;
+import com.turtledove.necropolisofnostalgia.entity.enemies.*;
+import com.turtledove.necropolisofnostalgia.packets.PacketHandler;
 import net.ilexiconn.llibrary.server.ServerEventHandler;
 import net.minecraft.world.GameRules;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -17,10 +19,12 @@ import org.apache.logging.log4j.Logger;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
-@Mod(modid = Necropolis_of_Nostalgia.MODID, name = Necropolis_of_Nostalgia.NAME, version = Necropolis_of_Nostalgia.VERSION)
+import java.io.File;
+
+@Mod(modid = Necropolis_of_Nostalgia.MODID, name = Necropolis_of_Nostalgia.NAME, version = Necropolis_of_Nostalgia.VERSION, guiFactory = "com.turtledove.necropolisofnostalgia.gui.WithernautsGuiFactory")
 public class Necropolis_of_Nostalgia {
     public static final String MODID = "turtdance";
-    public static final String NAME = "Necropolis of Nostalgia";
+    public static final String NAME = "Withernauts Zoology";
     public static final String VERSION = "1.0";
 
     private static Logger logger;
@@ -29,8 +33,31 @@ public class Necropolis_of_Nostalgia {
     public static PacketHandler packetHandler;
     public static Logger LOG;
 
+    public static WithernautsConfigs CONFIG = new WithernautsConfigs();
+    public static Configuration config;
+
     private static final class Holder {
         private static final Necropolis_of_Nostalgia INSTANCE = new Necropolis_of_Nostalgia();
+    }
+
+    public static void loadConfig()
+    {
+        File configFile = new File(Loader.instance().getConfigDir(), "withernauts_zoology.cfg");
+        if (!configFile.exists()) {
+            try {
+                configFile.createNewFile();
+            } catch (Exception e) {
+                logger.warn("Could not create a new Withernauts:Zoology config file.");
+                logger.warn(e.getLocalizedMessage());
+            }
+        }
+        config = new Configuration(configFile);
+        config.load();
+    }
+
+    public static void syncConfig() {
+        CONFIG.init(config);
+        config.save();
     }
 
 
@@ -38,6 +65,8 @@ public class Necropolis_of_Nostalgia {
     public void preInit(FMLPreInitializationEvent event)
     {
         LOG = event.getModLog();
+        loadConfig();
+        syncConfig();
         MinecraftForge.EVENT_BUS.register(ServerEventHandler.INSTANCE);
         if (event.getSide() == Side.CLIENT)
         {

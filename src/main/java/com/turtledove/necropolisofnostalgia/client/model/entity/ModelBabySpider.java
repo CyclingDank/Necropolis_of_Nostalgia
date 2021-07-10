@@ -1,7 +1,6 @@
 package com.turtledove.necropolisofnostalgia.client.model.entity;
 
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityBabyNecropolisSpider;
-import com.turtledove.necropolisofnostalgia.server.entity.enemies.EntityNecropolisSpider;
+import com.turtledove.necropolisofnostalgia.entity.enemies.EntityBabyNecropolisSpider;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
