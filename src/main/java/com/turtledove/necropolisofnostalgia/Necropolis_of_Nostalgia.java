@@ -67,7 +67,7 @@ public class Necropolis_of_Nostalgia {
         LOG = event.getModLog();
         loadConfig();
         syncConfig();
-        MinecraftForge.EVENT_BUS.register(ServerEventHandler.INSTANCE);
+        //MinecraftForge.EVENT_BUS.register(ServerEventHandler.INSTANCE);
         if (event.getSide() == Side.CLIENT)
         {
             RenderingRegistry.registerEntityRenderingHandler(EntityNecropolisSkeleton.class, RenderNecropolisSkeleton::new);
